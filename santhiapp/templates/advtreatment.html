@@ -1,0 +1,1194 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Treatment Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f1;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .banner-container {
+            width: 100%;
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .banner-slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .banner-slide:nth-child(1) {
+            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
+        }
+
+        .banner-slide:nth-child(2) {
+            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
+        }
+
+        .banner-slide:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
+        }
+
+        .banner-slide:nth-child(4) {
+            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .banner-btn {
+            padding: 15px 35px;
+            background-color: #221056;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .banner-btn:hover {
+            background-color: #3a5d4a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 2;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: white;
+        }
+
+        /* package sections (unchanged) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .explore-text {
+            color: #aacc00;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .packages-section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            position: relative;
+            min-width: 300px;
+        }
+
+        .image-left {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .image-right {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .renew-card {
+            position: absolute;
+            width: 280px;
+            height: 160px;
+            background-color: white;
+            border: 2px solid #aacc00;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .leaf-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .renew-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .renew-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .packages-list {
+            flex: 1;
+            padding-left: 30px;
+            min-width: 300px;
+        }
+
+        .package-item {
+            background-color: #aacc00;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .package-highlight {
+            font-weight: bold;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .packages-section {
+                flex-direction: column;
+            }
+
+            .packages-list {
+                padding-left: 0;
+                margin-top: 30px;
+            }
+
+            .image-section {
+                height: 400px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* treatment section css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .treatment-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .treatment-card {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .treatment-card:last-child {
+            border-bottom: none;
+        }
+
+        .treatment-title {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .treatment-image {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .treatment-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .treatment-description {
+            flex: 1;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .more-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #ddd;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .treatment-content {
+                flex-direction: column;
+            }
+
+            .more-btn {
+                margin-left: 0;
+                margin-top: 15px;
+                display: inline-block;
+            }
+        }
+
+        /* NEW CSS FOR EXPANDED CONTENT */
+        .expanded-content {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #e0e0e0;
+        }
+        
+        .expanded-description h3 {
+            color: #4CAF50;
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+        
+        .expanded-description ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .expanded-description li {
+            margin-bottom: 5px;
+        }
+        
+        .expanded-images {
+            margin-top: 25px;
+        }
+        
+        .expanded-images h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .image-gallery img {
+            width: calc(33.33% - 10px);
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 7.5px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+        
+        /* Animation for showing expanded content */
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-10px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .expanded-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        /* tratment section about css */
+        
+        
+        .treatments-section {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px;
+            background-color: #fff;
+            margin-top: 3px;
+        }
+        
+        .treatments-content {
+            flex: 1;
+            padding-right: 30px;
+        }
+        
+        .treatments-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .treatments-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .tagline {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-style: italic;
+            color: #137a08;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .aloe-img {
+            position: absolute;
+            left: 40px;
+            bottom: -40px;
+            width: 120px;
+            height: auto;
+            z-index: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .treatments-section {
+                flex-direction: column;
+            }
+            
+            .treatments-content {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .aloe-img {
+                width: 80px;
+                left: 20px;
+                bottom: -30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Multiple Image Scrolling Banner -->
+    <div class="banner-container">
+        <!-- Slide 1 -->
+        <div class="banner-slide active">
+            <div class="banner-content">
+                <h1 style="color: white;">Ancient Ayurvedic Healing</h1>
+                <p>Experience the transformative power of traditional Ayurveda treatments, customized to restore balance
+                    and promote holistic wellness.</p>
+                <button class="banner-btn">Discover Our Treatments</button>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;" >Natural Herbal Remedies</h1>
+                <p>Our authentic herbal formulations are prepared with care to address your unique body constitution and
+                    health concerns.</p>
+                <button class="banner-btn">Explore Remedies</button>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;">Mind-Body Balance</h1>
+                <p>Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
+                    programs.</p>
+                <button class="banner-btn">View Programs</button>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;">Personalized Care</h1>
+                <p>Our Ayurvedic experts design customized treatment plans based on your individual dosha composition
+                    and health needs.</p>
+                <button class="banner-btn">Book Consultation</button>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="setSlide(0)"></span>
+            <span class="indicator" onclick="setSlide(1)"></span>
+            <span class="indicator" onclick="setSlide(2)"></span>
+            <span class="indicator" onclick="setSlide(3)"></span>
+        </div>
+    </div>
+
+
+    <section class="treatments-section" style="margin-top: 30px;">
+        <div class="treatments-content">
+            <h1>Treatments</h1>
+            <p class="tagline">Health and wellness of the mind, body and soul forms the basis of all therapies.</p>
+            <p class="description">Many special treatments prescribed in the ancient medical classics for some of the most distressing diseases are currently practised only in Kerala. And they have been effectively administered in the manner matching with the needs of modern patients at all the Ayurvedic Hospital & Research Centres of Santhi Ayurvetha Hospital.</p>
+        </div>
+        <div class="treatments-image">
+            <img src="https://i.pinimg.com/originals/ed/78/7b/ed787bbfd5df84e169eb494b33532d27.jpg" alt="Ayurvedic treatments with herbs, spices and traditional tools on a wooden surface" />
+        </div>
+        <img class="aloe-img" src="https://pngimg.com/d/aloe_vera_PNG49.png" alt="Aloe vera plant" />
+    </section>
+
+
+
+    <div class="treatment-section">
+        <div class="contact-header" style="margin-top: 30px;">
+            <h3>Ayurvedic</h3>
+            <h2>Treatments</h2>
+        </div>
+        <!-- Pizhichil Treatment -->
+        <div class="treatment-card">
+            <h2 class="treatment-title">Pizhichil</h2>
+            <img src="https://akayurvediclinic.com/images/slider/slide01.jpg" alt="Pizhichil Treatment"
+                class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    The patient would be examined by the doctors and the oil to be used would be prescribed. The oil
+                    would be slightly heated. A clean cloth bundle would be kept ready.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- New expanded content section -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Known as the "oil bath," Pizhichil is one of the most luxurious and rejuvenating Ayurvedic treatments. Warm herbal oil is continuously poured over the entire body while being gently massaged into the skin. This royal treatment was traditionally reserved for the kings of Kerala for its remarkable rejuvenating effects.</p>
+                    
+                    <p>This treatment is especially beneficial for:</p>
+                    <ul>
+                        <li>Arthritis and joint pain</li>
+                        <li>Nervous system disorders</li>
+                        <li>Muscle tension and stiffness</li>
+                        <li>Paralysis and hemiplegia</li>
+                        <li>Enhancing skin luster and texture</li>
+                        <li>Overall rejuvenation and anti-aging</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://media.istockphoto.com/id/1271483100/photo/dhara-ayurvedic-forehead-oil-treatment.jpg?s=612x612&w=0&k=20&c=oqBkBSvUy0-PGPmAI0aDC-ZoXYBezF10R1D92H9GcmA=" alt="Pizhichil oil preparation">
+                        <img src="https://i0.wp.com/www.ayurvedagram.com/blog/wp-content/uploads/2019/05/image5.jpg?resize=604%2C402&ssl=1" alt="Pizhichil massage technique">
+                        <img src="https://www.somatheeram.org/wp-content/uploads/2019/07/sarvangadhara-1-1.jpg" alt="Full body Pizhichil treatment">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Njavarakizhi Treatment -->
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- New expanded content section -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add expanded content sections for all other treatment cards following the same pattern -->
+        <!-- I'll include one more example and you can follow the same pattern for the rest -->
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Pizhichil</h2>
+            <img src="https://akayurvediclinic.com/images/slider/slide01.jpg" alt="Pizhichil Treatment"
+                class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    The patient would be examined by the doctors and the oil to be used would be prescribed. The oil
+                    would be slightly heated. A clean cloth bundle would be kept ready.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Known as the "oil bath," Pizhichil is one of the most luxurious and rejuvenating Ayurvedic treatments. Warm herbal oil is continuously poured over the entire body while being gently massaged into the skin. This royal treatment was traditionally reserved for the kings of Kerala for its remarkable rejuvenating effects.</p>
+                    
+                    <p>This treatment is especially beneficial for:</p>
+                    <ul>
+                        <li>Arthritis and joint pain</li>
+                        <li>Nervous system disorders</li>
+                        <li>Muscle tension and stiffness</li>
+                        <li>Paralysis and hemiplegia</li>
+                        <li>Enhancing skin luster and texture</li>
+                        <li>Overall rejuvenation and anti-aging</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://media.istockphoto.com/id/1271483100/photo/dhara-ayurvedic-forehead-oil-treatment.jpg?s=612x612&w=0&k=20&c=oqBkBSvUy0-PGPmAI0aDC-ZoXYBezF10R1D92H9GcmA=" alt="Pizhichil oil preparation">
+                        <img src="https://i0.wp.com/www.ayurvedagram.com/blog/wp-content/uploads/2019/05/image5.jpg?resize=604%2C402&ssl=1" alt="Pizhichil massage technique">
+                        <img src="https://www.somatheeram.org/wp-content/uploads/2019/07/sarvangadhara-1-1.jpg" alt="Full body Pizhichil treatment">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Continue with the rest of your treatment cards, adding expanded content sections to each one -->
+        <!-- For brevity, I'm not including all of them, but you would follow the same pattern -->
+
+        <!-- Example of additional treatment cards with expanded content -->
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card">
+            <h2 class="treatment-title">Njavarakzhi</h2>
+            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
+                    are applied externally.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Neurological disorders like paralysis</li>
+                        <li>Muscle wasting and weakness</li>
+                        <li>Joint pain and inflammation</li>
+                        <li>Improving blood circulation</li>
+                        <li>Rejuvenating the body tissues</li>
+                        <li>Strengthening the nervous system</li>
+                    </ul>
+                    
+                    <h3>Procedure</h3>
+                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
+                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
+                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Function to show a specific slide
+        function setSlide(index) {
+            slideIndex = index;
+            updateSlides();
+        }
+
+        // Function to update slides display
+        function updateSlides() {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Update indicators
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            // Show current slide and highlight current indicator
+            slides[slideIndex].classList.add('active');
+            indicators[slideIndex].classList.add('active');
+        }
+
+        // Function to move to the next slide
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            updateSlides();
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // NEW JAVASCRIPT FOR EXPANDED CONTENT
+        // Get all "more..." buttons
+        const moreButtons = document.querySelectorAll('.more-btn');
+        
+        // Add click event listener to each button
+        moreButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the parent treatment card
+                const treatmentCard = this.closest('.treatment-card');
+                
+                // Find the expanded content section within this card
+                const expandedContent = treatmentCard.querySelector('.expanded-content');
+                
+                // Toggle expanded content visibility
+                if (expandedContent.style.display === 'none' || !expandedContent.classList.contains('active')) {
+                    expandedContent.style.display = 'block';
+                    expandedContent.classList.add('active');
+                    this.textContent = 'less...'; // Change button text
+                } else {
+                    expandedContent.classList.remove('active');
+                    this.textContent = 'more...'; // Restore button text
+                    
+                    // Small delay before hiding to allow animation to complete
+                    setTimeout(() => {
+                        expandedContent.style.display = 'none';
+                    }, 500);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+{% endblock %}

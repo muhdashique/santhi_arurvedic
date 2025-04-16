@@ -1,0 +1,705 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Santhi Ayurvedic{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images\shanthi.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            /* Add padding only for the navbar height */
+            padding-top: 150px;
+            /* Adjust based on your navbar height */
+        }
+
+        /* Header styling */
+        .header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+        }
+
+        /* Header top section - black background */
+        /* .header-top {
+            background-color: #000000;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        } */
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info .email {
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .contact-info .email i {
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-left: 15px;
+            border: 1px solid white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        /* Transparent navbar styling */
+        .navbar {
+            background-color: rgba(23, 84, 36, 0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgb(23, 84, 36);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 70px;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .logo-text {
+            color: white;
+            margin-left: 10px;
+            line-height: 1.3;
+        }
+
+        .logo-text h2 {
+            font-size: 22px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .logo-text h3 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .nav-menu li {
+            margin: 0 5px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 10px;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #4CAF50;
+        }
+
+        .nav-menu a.active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Full width banner */
+        .page-banner {
+            height: 700px;
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('{% static "images/banner.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: -80px;
+            /* Adjust if needed */
+        }
+
+        /* Content container */
+        /* .content-container {
+            min-height: 100vh;
+            width: 100%;
+        }
+         */
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            right: 20px;
+            bottom: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgb(23, 84, 36);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background-color: #4CAF50;
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 992px) {
+
+            .header-top,
+            .navbar {
+                padding: 10px 5%;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #000000;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .social-icons a {
+                width: 30px;
+                height: 30px;
+                margin-left: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .social-icons {
+                display: none;
+                /* Hide social icons on very small screens */
+            }
+
+            .floating-btns {
+                right: 15px;
+                bottom: 15px;
+                gap: 10px;
+            }
+
+            .floating-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 14px;
+            }
+        }
+
+
+        /* footer section */
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaf-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h3 {
+            color: #221056;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .contact-header h2 {
+            color: #221056;
+            font-size: 40px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding: 0 80px;
+        }
+
+        .contact-header h2::before,
+        .contact-header h2::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30' fill='%2390b56a'%3E%3Cpath d='M0,15 Q25,0 50,15 T100,15'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .contact-header h2::before {
+            left: 0;
+        }
+
+        .contact-header h2::after {
+            right: 0;
+            transform: scaleX(-1);
+        }
+
+        .contact-tagline {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            max-width: 300px;
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #009040;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .icon-circle i {
+            color: white;
+            font-size: 24px;
+        }
+
+        .info-content h4 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .info-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+
+        .footer-nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: #009040;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-powered {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .navbarorg {
+            transition: background-color 0.3s ease;
+            background-color: transparent;
+        }
+
+        .navbarorg.scrolled {
+            background-color: rgba(0, 0, 0, 0.292);
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-toporg {
+            transition: all 0.3s ease;
+            background-color: #000000;
+        }
+
+        .header-toporg.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .navbarorg {
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .navbarorg.sticky {
+            background-color: rgba(0, 0, 0, 0.292);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .contact-header h2 {
+                font-size: 32px;
+                padding: 0 60px;
+            }
+
+            .info-item {
+                flex-basis: 100%;
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            .icon-circle {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .footer-nav a {
+                display: inline-block;
+                margin: 5px 10px;
+                color: #0000000a;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Updated header and navbar structure -->
+    <!-- In your base.html -->
+    <header class=" fixed top-0 left-0 right-0 z-[999]">
+        <!-- Header Top Section -->
+        <div class="flex justify-between items-center header-toporg px-5 py-3 bg-[#000]">
+            <div class="flex items-center gap-2 text-white ">
+                <a href="mailto:info@santhihospital.com" class="email flex items-center gap-2">
+                    <i class="fas fa-envelope p-3 rounded-full border border-white"></i>
+                    <span>santhihospital2004@gmail.com</span>
+                </a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="flex navbarorg justify-center items-center w-full px-2 max-w-[1200px] mx-auto">
+            <a href="/" class="logo">
+                <img src="{% static 'images/shanthi.png' %}" alt="Santhi Ayurvedic Logo">
+                <div class="logo-text">
+                    <h2>SANTHI</h2>
+                    <h3>Ayurvedic</h3>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a>
+                </li>
+                <li><a href="{% url 'gallery' %}"
+                        class="{% if request.path == '/gallery/' %}active{% endif %}">gallery</a></li>
+                <li><a href="{% url 'treatment' %}"
+                        class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
+                <li><a href="{% url 'advtreatment' %}"
+                        class="{% if request.path == '/advtreatment/' %}active{% endif %}">Treatments</a></li>
+                <li><a href="{% url 'facilities' %}"
+                        class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-btns">
+        <a href="mailto:info@ayurvedawayanad.com" class="floating-btn">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="floating-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+1234567890" class="floating-btn">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="m-0 p-0 relative mt-[-100px]">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer class="footer-container">
+        <div class="leaf-background"></div>
+        <div class="contact-header">
+            <h3>Contact with ease</h3>
+            <h2>Get in touch</h2>
+        </div>
+        <div class="contact-tagline">
+            Come and visit our center or simply send us an email anytime you want. We are open to all suggestions from
+            our patrons.
+        </div>
+        <div class="contact-info">
+            <div class="info-item">
+                <div class="icon-circle">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h4>ADDRESS</h4>
+                    <p>KAMSH & YRC, Emily, Kalpetta,<br>Wayanad, Kerala - 673121</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                    <h4>CALL US</h4>
+                    <p>+91 6361575496 , +91 9497872562</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                    <h4>EMAIL US</h4>
+                    <p>info@ayurvedawayanad.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-nav">
+            <a href="#">Home</a> |
+            <a href="#">About us</a> |
+            <a href="#">Treatments</a> |
+            <a href="#">Packages</a> |
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            © 2024 All rights reservedSanthi Ayurvedic Multispeciality Hospital & Yoga Research Centre
+        </div>
+        <div class="footer-powered">
+            Powered by Meridian Solutions Inc.
+        </div>
+    </footer>
+
+
+
+    <!-- Allow for additional scripts to be added by child templates -->
+    {% block additional_scripts %}{% endblock %}
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbarorg');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    navMenu.classList.toggle('active');
+
+                    // Toggle icon between bars and times
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const headerTop = document.querySelector('.header-toporg');
+            const navbar = document.querySelector('.navbarorg');
+
+            if (window.scrollY > 50) {
+                headerTop.classList.add('hidden');
+                navbar.classList.add('sticky');
+            } else {
+                headerTop.classList.remove('hidden');
+                navbar.classList.remove('sticky');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Back to top button functionality
+            const backToTop = document.createElement('div');
+            backToTop.className = 'back-to-top';
+            backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+            backToTop.style.position = 'fixed';
+            backToTop.style.right = '20px';
+            backToTop.style.bottom = '20px';
+            backToTop.style.width = '50px';
+            backToTop.style.height = '50px';
+            backToTop.style.borderRadius = '50%';
+            backToTop.style.backgroundColor = '#221056';
+            backToTop.style.color = 'white';
+            backToTop.style.display = 'flex';
+            backToTop.style.justifyContent = 'center';
+            backToTop.style.alignItems = 'center';
+            backToTop.style.cursor = 'pointer';
+            backToTop.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+            backToTop.style.zIndex = '999';
+            document.body.appendChild(backToTop);
+
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

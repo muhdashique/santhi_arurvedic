@@ -1,0 +1,871 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurveda Treatment Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f5f1;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .banner-container {
+            width: 100%;
+            height: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .banner-slide::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .banner-slide:nth-child(1) {
+            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
+        }
+
+        .banner-slide:nth-child(2) {
+            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
+        }
+
+        .banner-slide:nth-child(3) {
+            background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
+        }
+
+        .banner-slide:nth-child(4) {
+            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .banner-btn {
+            padding: 15px 35px;
+            background-color: #221056;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .banner-btn:hover {
+            background-color: #3a5d4a;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 2;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: white;
+        }
+
+        /* package sections (unchanged) */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .explore-text {
+            color: #aacc00;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .packages-section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            position: relative;
+            min-width: 300px;
+        }
+
+        .image-left {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .image-right {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .renew-card {
+            position: absolute;
+            width: 280px;
+            height: 160px;
+            background-color: white;
+            border: 2px solid #aacc00;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .leaf-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .renew-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .renew-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .packages-list {
+            flex: 1;
+            padding-left: 30px;
+            min-width: 300px;
+        }
+
+        .package-item {
+            background-color: #aacc00;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .package-highlight {
+            font-weight: bold;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .packages-section {
+                flex-direction: column;
+            }
+
+            .packages-list {
+                padding-left: 0;
+                margin-top: 30px;
+            }
+
+            .image-section {
+                height: 400px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        /* package sections */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .explore-text {
+            color: #aacc00;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .packages-section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            position: relative;
+            min-width: 300px;
+        }
+
+        .image-left {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .image-right {
+            width: 50%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .renew-card {
+            position: absolute;
+            width: 280px;
+            height: 160px;
+            background-color: white;
+            border: 2px solid #aacc00;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .leaf-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .renew-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .renew-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .packages-list {
+            flex: 1;
+            padding-left: 30px;
+            min-width: 300px;
+        }
+
+        .package-item {
+            background-color: #aacc00;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .package-highlight {
+            font-weight: bold;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .packages-section {
+                flex-direction: column;
+            }
+
+            .packages-list {
+                padding-left: 0;
+                margin-top: 30px;
+            }
+
+            .image-section {
+                height: 400px;
+            }
+        }
+
+        /* about section css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero-section {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            background-color: #fff8dc;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .image-wrapper {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .divider {
+            width: 50%;
+            height: 1px;
+            background-color: #7c9c4a;
+            margin: 30px auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+
+            .content-wrapper {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        /* treat ment sections */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .ayurvedic-container {
+            background-color: #009040;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            color: white;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+            width: 45%;
+        }
+
+        .image-container {
+            overflow: hidden;
+            border-radius: 30px;
+        }
+
+        .ayurvedic-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            width: 55%;
+            padding: 0 30px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .ayurvedic-container {
+                flex-direction: column;
+            }
+
+            .image-grid {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                width: 100%;
+                padding: 20px 0;
+            }
+        }
+
+        /* team sections  */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .specialist-section {
+            display: flex;
+            background-color: #ffffff;
+            color: white;
+            min-height: 420px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .image-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .image-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 0 100% 100% 0;
+            transform: translateX(50px);
+        }
+
+        .content-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .specialist-section {
+                flex-direction: column;
+            }
+
+            .image-container::before {
+                display: none;
+            }
+
+            .title {
+                font-size: 32px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Full Width Banner -->
+    <div class="banner-container">
+        <!-- Slide 1 -->
+        <div class="banner-slide active">
+            <div class="banner-content">
+                <h1 style="color: white;">Ancient Ayurvedic Healing</h1>
+                <p style="color: white;">Experience the transformative power of traditional Ayurveda treatments,
+                    customized to restore balance and promote holistic wellness.</p>
+                <button class="banner-btn">Discover Our Treatments</button>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;">Natural Herbal Remedies</h1>
+                <p style="color: white;">Our authentic herbal formulations are prepared with care to address your unique
+                    body constitution and health concerns.</p>
+                <button class="banner-btn">Explore Remedies</button>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;">Mind-Body Balance</h1>
+                <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic
+                    Ayurvedic wellness programs.</p>
+                <button class="banner-btn">View Programs</button>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="banner-slide">
+            <div class="banner-content">
+                <h1 style="color: white;">Personalized Care</h1>
+                <p style="color: white;">Our Ayurvedic experts design customized treatment plans based on your
+                    individual dosha composition and health needs.</p>
+                <button class="banner-btn">Book Consultation</button>
+            </div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="slide-indicators">
+            <span class="indicator active" onclick="setSlide(0)"></span>
+            <span class="indicator" onclick="setSlide(1)"></span>
+            <span class="indicator" onclick="setSlide(2)"></span>
+            <span class="indicator" onclick="setSlide(3)"></span>
+        </div>
+    </div>
+
+
+
+
+    <section class="hero-section" style="margin-top: 30px;">
+        <div class="content-wrapper">
+            <h1>Healing Naturally, Caring Compassionately</h1>
+            <p>Santhi Ayurveda Hospital is a holistic approach that integrates the mind, body, and spirit in all aspects
+                of patient care. We believe that every individual has his or her own constitution, and it is ours to
+                help everyone achieve their maximum health potential</p>
+            <p>Our hospital excels in exceptional patient care, advanced technology, and a compassionate medical team.
+                With expert doctors, modern facilities, and personalized treatments, we prioritize safety, comfort, and
+                satisfaction. Trust us for quality healthcare and a seamless healing experience.</p>
+        </div>
+        <div class="image-wrapper">
+            <img src="https://vivere.yoga/wp-content/uploads/2020/03/Depositphotos_97968082_l-2015.jpg"
+                alt="Ayurvedic treatment items including brass bowls, herbs, flowers and treatment tools">
+        </div>
+    </section>
+    <div class="divider"></div>
+
+    <div class="ayurvedic-container">
+        <div class="image-grid">
+            <div class="image-container">
+                <img class="ayurvedic-image"
+                    src="https://www.svoiludi.ru/images/tb/11819/kalari-rasayana-hotel-14094799268594_w990h700.jpg"
+                    alt="Spa setup with essential oils, towels, and flowers">
+            </div>
+            <div class="image-container">
+                <img class="ayurvedic-image" src="https://kompastour.com/useruploads/hotels/hotel_b6cd1738d9.jpg"
+                    alt="Ayurvedic herbs, mortar and pestle">
+            </div>
+            <div class="image-container">
+                <img class="ayurvedic-image"
+                    src="https://i.pinimg.com/originals/0d/19/79/0d1979d323fc13377153057d960ebc28.jpg"
+                    alt="Herbal compress balls and spices">
+            </div>
+            <div class="image-container">
+                <img class="ayurvedic-image"
+                    src="https://cdn.tripster.ru/thumbs2/5c1e5d6a-3070-11ee-a6e1-2258946a8a8d.1080x810.jpeg"
+                    alt="Massage oils and towels">
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 style="margin-top: 100px;">Ayurvedic Treatments: Revitalizing Life, Naturally</h1>
+            <p>Step into the world of Ayurveda, where ancient therapies harmonize with modern life to bring lasting
+                wellness. From easing chronic ailments to rejuvenating your body and mind, Ayurvedic treatments are
+                rooted in balance and holistic healing. Discover the transformative effects of natural remedies and
+                personalized care, restoring vitality to your life—one step at a time.</p>
+            <p>From improving digestion and boosting immunity to reducing stress and enhancing mental clarity, Ayurveda
+                fosters overall wellness. Its therapies, like herbal treatments and rejuvenating massages, harmonize the
+                body with nature, offering a sustainable path to vitality and balance.</p>
+        </div>
+    </div>
+
+
+
+
+    <section class="specialist-section" style="margin-top: 50px;">
+        <div class="image-container">
+            <img src="https://cs4.pikabu.ru/post_img/2016/01/04/5/145188744480777441.jpg"
+                alt="Ayurvedic Specialist Team at Abhaya Ayurveda Hospital">
+        </div>
+        <div class="content-container">
+            <h2 class="title" style="color: black;">Professional Ayurvedic Specialist</h2>
+            <p class="description">
+                Our Ayurvedic treatments, based on the concept that our body is a microcosm of the
+                universe, have, at the Abhaya Ayurveda Hospital, always taken into account that the
+                proper integration of body, mind, and spirit can give a life in complete wellness with
+                prevention and healing of various conditions. Our hospital thrives in delivering
+                exceptional healthcare, combining expertise, compassion, and innovation to transform
+                lives. Our team of experienced Ayurvedic doctors and therapists work tirelessly to create
+                personalized treatment plans that cater to the unique needs of each guest. From stress
+                and anxiety to chronic illnesses, our treatments are designed to heal your mind, body,
+                and soul, leaving you feeling refreshed and rejuvenated.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function () {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+
+            mobileMenuBtn.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+
+                // Toggle icon between bars and times
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+    <script>
+        // JavaScript for the slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Function to show a specific slide
+        function setSlide(index) {
+            slideIndex = index;
+            updateSlides();
+        }
+
+        // Function to update slides display
+        function updateSlides() {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            // Update indicators
+            indicators.forEach(indicator => {
+                indicator.classList.remove('active');
+            });
+
+            // Show current slide and highlight current indicator
+            slides[slideIndex].classList.add('active');
+            indicators[slideIndex].classList.add('active');
+        }
+
+        // Function to move to the next slide
+        function nextSlide() {
+            slideIndex++;
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            updateSlides();
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+
+
+
+
+</body>
+
+</html>
+{% endblock %}
