@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-e@ml+i0ice1ko_yh!(-^eh-7)tpptdav!jih4*6f%0xx4%e9l%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shanthiayurveda.in','www.shanthiayurveda.in']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'shanthiayurveda.in', 'www.shanthiayurveda.in']
+
 
 
 # Application definition
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'santhiproject.wsgi.application'
 #         'ENGINE': 'django.db.backends.postgresql',
 #         'NAME': 'santhiHospital',  # Replace with your database name
 #         'USER': 'postgres',  # Replace with your database username
-#         'PASSWORD': 'info@imc',  # Replace with your database password
+#         'PASSWORD': '1234',  # Replace with your database password
 #         'HOST': 'localhost',  # For local development, use 'localhost' or '127.0.0.1'
 #         'PORT': '5432',  # Default PostgreSQL port is 5432
 #     }
