@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -545,23 +547,29 @@
             <a href="/" class="logo">
                 <img src="{% static 'images/shanthi.png' %}" alt="Santhi Ayurvedic Logo">
                 <div class="hidden text-[#fff] font-bold ml-2 text-xl leading-tight md:block ">
-                    <h2>SANTHI</h2>
+                    <h2>SHANTHI</h2>
                     <h3>Ayurvedic</h3>
                 </div>
             </a>
 
             <!-- Mobile menu button with improved styling -->
-            <div class="mobile-menu-btn w-[40px] h-[40px] flex justify-center items-center  rounded-full bg-[#21903F]  lg:hidden block p-2 cursor-pointer">
+            <div
+                class="mobile-menu-btn w-[40px] h-[40px] flex justify-center items-center  rounded-full bg-[#21903F]  lg:hidden block p-2 cursor-pointer">
                 <i class="fas fa-bars text-white text-xl"></i>
             </div>
 
             <!-- Improved nav menu with transition effects -->
-            <ul class="nav-menu hidden lg:flex lg:static absolute top-full left-0 w-full bg-black lg:bg-transparent lg:flex-row flex-col items-center z-[999] shadow-lg lg:shadow-none transition-all duration-300 ease-in-out">
+            <ul
+                class="nav-menu hidden lg:flex lg:static absolute top-full left-0 w-full bg-black lg:bg-transparent lg:flex-row flex-col items-center z-[999] shadow-lg lg:shadow-none transition-all duration-300 ease-in-out">
                 <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
-                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a></li>
-                <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
-                <li><a href="{% url 'treatment' %}" class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
-                <li><a href="{% url 'facilities' %}" class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
+                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a>
+                </li>
+                <li><a href="{% url 'gallery' %}"
+                        class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
+                <li><a href="{% url 'treatment' %}"
+                        class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
+                <li><a href="{% url 'facilities' %}"
+                        class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
             </ul>
         </nav>
     </header>
