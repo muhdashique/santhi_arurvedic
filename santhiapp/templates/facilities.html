@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Ayurveda Treatment Banner</title>
     <style>
         * {
@@ -25,6 +27,7 @@
             overflow-x: hidden;
         }
 
+        /* Banner Styling */
         .banner-container {
             width: 100%;
             height: 800px;
@@ -68,6 +71,7 @@
             position: relative;
             z-index: 2;
             max-width: 1000px;
+            padding: 0 15px;
         }
 
         .banner-slide:nth-child(1) {
@@ -116,7 +120,7 @@
         }
 
         .banner-btn:hover {
-            background-color: #3a5d4a;
+            background-color: #019141;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -143,162 +147,18 @@
             background-color: white;
         }
 
-        /* package sections (unchanged) */
+        /* Container Styling */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            width: 100%;
         }
 
-        .explore-text {
-            color: #aacc00;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .description {
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .packages-section {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .image-section {
-            flex: 1;
-            display: flex;
-            position: relative;
-            min-width: 300px;
-        }
-
-        .image-left {
-            width: 50%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .image-right {
-            width: 50%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .renew-card {
-            position: absolute;
-            width: 280px;
-            height: 160px;
-            background-color: white;
-            border: 2px solid #aacc00;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .leaf-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-        }
-
-        .renew-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .renew-text {
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .packages-list {
-            flex: 1;
-            padding-left: 30px;
-            min-width: 300px;
-        }
-
-        .package-item {
-            background-color: #aacc00;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .package-highlight {
-            font-weight: bold;
-        }
-
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .whatsapp-icon {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        @media (max-width: 768px) {
-            .packages-section {
-                flex-direction: column;
-            }
-
-            .packages-list {
-                padding-left: 0;
-                margin-top: 30px;
-            }
-
-            .image-section {
-                height: 400px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-
-
-        /* fecility css first */
-
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
+        /* Features Section */
         .features-section {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             gap: 20px;
             margin-bottom: 40px;
@@ -314,6 +174,7 @@
             align-items: center;
             justify-content: center;
             min-height: 400px;
+            min-width: 280px;
         }
 
         .feature-card.dark {
@@ -340,6 +201,7 @@
         .feature-card p {
             margin-bottom: 20px;
             line-height: 1.6;
+            font-size: 1rem;
         }
 
         .btn {
@@ -359,6 +221,7 @@
             color: #8B7142;
         }
 
+        /* Info Section */
         .info-section {
             padding: 20px;
             background-color: #fff;
@@ -379,6 +242,7 @@
             color: #666;
             line-height: 1.6;
             margin-bottom: 20px;
+            font-size: 1rem;
         }
 
         .leaf-icon {
@@ -390,8 +254,8 @@
             font-size: 48px;
             color: white;
         }
-        /* accommadation */
-     
+
+        /* Accommodation Section */
         .accommodation-section {
             background-color: #221056;
             color: white;
@@ -466,8 +330,136 @@
             line-height: 1.6;
             padding: 0 10px;
         }
+
+        /* Promo Section */
+        .section-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
         
+        .promo-section {
+            background-color: #221056;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+        }
+        
+        .promo-content {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .promo-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            margin: 0 15px;
+        }
+        
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .promo-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .promo-description {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .section-right {
+            flex-direction: row-reverse;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .banner-container {
+                height: 700px;
+            }
+
+            .banner-content {
+                max-width: 800px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            .promo-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .banner-container {
+                height: 600px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .banner-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .features-section {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                min-height: 300px;
+            }
+
+            .info-section h2 {
+                font-size: 24px;
+            }
+
             .section-title {
                 font-size: 1.8rem;
             }
@@ -479,6 +471,92 @@
             
             .room-card {
                 max-width: 100%;
+            }
+
+            .promo-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .promo-image {
+                margin: 0 auto 20px;
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-right {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-container {
+                height: 500px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .banner-btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .feature-card {
+                min-height: 250px;
+                padding: 30px 15px;
+            }
+
+            .feature-card h3 {
+                font-size: 20px;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            .info-section h2 {
+                font-size: 20px;
+            }
+
+            .info-section p {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .room-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .room-name {
+                font-size: 1.2rem;
+            }
+
+            .promo-title {
+                font-size: 22px;
+            }
+
+            .promo-description {
+                font-size: 16px;
+            }
+
+            .promo-image {
+                width: 180px;
+                height: 180px;
             }
         }
     </style>
@@ -536,7 +614,6 @@
         </div>
     </div>
 
-
     <div class="container">
         <section class="features-section">
             <div class="feature-card dark">
@@ -575,7 +652,6 @@
         </section>
     </div>
 
-
     <section class="accommodation-section">
         <h2 class="section-title">ACCOMMODATION: A Sanctuary of Comfort</h2>
         <p class="section-subtitle">Experience a peaceful and comfortable stay in our thoughtfully designed accommodation. Choose from a variety of rooms tailored to your preferences</p>
@@ -583,7 +659,7 @@
         <div class="room-grid">
             <div class="room-card">
                 <div class="room-image">
-                    <img src="/api/placeholder/400/400" alt="Krishna Room - Premium AC Room">
+                    <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/06/24/a3873312-53f4-44ba-969d-783d8cc3e84c_c691d77b.jpg" alt="Krishna Room - Premium AC Room">
                 </div>
                 <h3 class="room-name">KRISHNA</h3>
                 <p class="room-type">PREMIUM AC ROOMS</p>
@@ -592,7 +668,7 @@
             
             <div class="room-card">
                 <div class="room-image">
-                    <img src="/api/placeholder/400/400" alt="Navarang Room - Standard Non AC Room">
+                    <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/06/24/a3873312-53f4-44ba-969d-783d8cc3e84c_c691d77b.jpg" alt="Navarang Room - Standard Non AC Room">
                 </div>
                 <h3 class="room-name">NAVARANG</h3>
                 <p class="room-type">STANDARD NON AC ROOMS</p>
@@ -601,7 +677,7 @@
             
             <div class="room-card">
                 <div class="room-image">
-                    <img src="/api/placeholder/400/400" alt="Lakshmi Room - Basic Non AC Room">
+                    <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/06/24/a3873312-53f4-44ba-969d-783d8cc3e84c_c691d77b.jpg" alt="Lakshmi Room - Basic Non AC Room">
                 </div>
                 <h3 class="room-name">LAKSHMI</h3>
                 <p class="room-type">BASIC NON AC ROOMS</p>
@@ -610,12 +686,38 @@
         </div>
     </section>
 
+    <div class="section-container">
+        <!-- First Section -->
+        <div class="promo-section">
+          <div class="promo-image">
+            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/06/24/a3873312-53f4-44ba-969d-783d8cc3e84c_c691d77b.jpg" alt="Cosmetic clinic interior with treatment chair and green floor mat">
+          </div>
+          <div class="promo-content">
+            <h2 class="promo-title">COSMETIC CLINIC: Natural Beauty, Inside and Out</h2>
+            <p class="promo-description">
+              Reconnect with your natural radiance at our Ayurvedic cosmetic clinic. Our skilled practitioners 
+              offer personalized treatments for your skin and hair, ensuring you feel and look your best.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Second Section -->
+        <div class="promo-section section-right">
+          <div class="promo-image">
+            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/06/24/a3873312-53f4-44ba-969d-783d8cc3e84c_c691d77b.jpg" alt="Minor OT facility with medical equipment">
+          </div>
+          <div class="promo-content">
+            <h2 class="promo-title">MINOR OT: Expert Care, Minus the Surgery</h2>
+            <p class="promo-description">
+              Our minor OT facility provides Ayurvedic treatments and procedures without major surgeries.
+              With a dedicated operating room and essential surgical instruments, we ensure your well-being
+              remains the top priority.
+            </p>
+          </div>
+        </div>
+    </div>
 
-
-
-
-
-
+   
 
     <script>
         // JavaScript for the slideshow functionality
@@ -661,4 +763,4 @@
 </body>
 
 </html>
-{% endblock %}
+{% endblock %} 

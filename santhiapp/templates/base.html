@@ -7,6 +7,11 @@
     <title>{% block title %}Santhi Ayurvedic{% endblock %}</title>
     <link rel="icon" type="image/png" href="{% static 'images\shanthi.png' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
@@ -37,16 +42,6 @@
             top: 0;
         }
 
-        /* Header top section - black background */
-        /* .header-top {
-            background-color: #000000;
-            padding: 10px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        } */
-
         .contact-info {
             display: flex;
             align-items: center;
@@ -73,7 +68,7 @@
         .social-icons a {
             color: white;
             margin-left: 15px;
-            border: 1px solid white;
+            border: 1px solid rgb(68, 175, 71);
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -184,12 +179,6 @@
             /* Adjust if needed */
         }
 
-        /* Content container */
-        /* .content-container {
-            min-height: 100vh;
-            width: 100%;
-        }
-         */
         /* Floating Buttons */
         .floating-btns {
             position: fixed;
@@ -198,7 +187,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            z-index: 999;
+            z-index: 9999;
         }
 
         .floating-btn {
@@ -220,39 +209,77 @@
             background-color: #4CAF50;
         }
 
-        /* Media queries for responsiveness */
+        /* Mobile menu styles */
         @media (max-width: 992px) {
-
-            .header-top,
-            .navbar {
-                padding: 10px 5%;
-            }
-
             .nav-menu {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: #000000;
+                background-color: rgba(0, 0, 0, 0.9);
                 flex-direction: column;
                 align-items: center;
-                padding: 10px 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out, padding 0.3s ease;
+                backdrop-filter: blur(5px);
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
             }
 
             .nav-menu.active {
                 display: flex;
+                padding: 10px 0;
+                max-height: 500px;
+                transition: max-height 0.5s ease-in, padding 0.3s ease;
             }
 
             .nav-menu li {
-                margin: 5px 0;
+                margin: 8px 0;
                 width: 100%;
                 text-align: center;
             }
 
+            .nav-menu li a {
+                padding: 12px 15px;
+                display: block;
+                font-weight: 500;
+                letter-spacing: 1px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none;
+            }
+
             .mobile-menu-btn {
                 display: block;
+                /* width: 45px;
+                height: 45px; */
+                /* border-radius: 50%; */
+                background-color: rgba(23, 84, 36, 0.8);
+                /* display: flex; */
+                /* align-items: center;
+                justify-content: center; */
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn:hover {
+                background-color: #4CAF50;
+            }
+
+            .mobile-menu-btn i {
+                transition: transform 0.3s ease;
+            }
+
+            .mobile-menu-btn.active i.fa-bars {
+                transform: rotate(90deg);
+            }
+
+            .header-top,
+            .navbar {
+                padding: 10px 5%;
             }
 
             .social-icons a {
@@ -270,7 +297,7 @@
 
             .floating-btns {
                 right: 15px;
-                bottom: 15px;
+                bottom: 100px;
                 gap: 10px;
             }
 
@@ -280,7 +307,6 @@
                 font-size: 14px;
             }
         }
-
 
         /* footer section */
         .footer-container {
@@ -378,7 +404,7 @@
         }
 
         .icon-circle i {
-            color: white;
+            color: #ffffff;
             font-size: 24px;
         }
 
@@ -484,74 +510,480 @@
             .footer-nav a {
                 display: inline-block;
                 margin: 5px 10px;
-                color: #0000000a;
             }
         }
     </style>
 </head>
 
 <body>
-
     <!-- Updated header and navbar structure -->
-    <!-- In your base.html -->
-    <header class=" fixed top-0 left-0 right-0 z-[999]">
+    <header class="fixed top-0 left-0 right-0 z-[9999]">
         <!-- Header Top Section -->
         <div class="flex justify-between items-center header-toporg px-5 py-3 bg-[#000]">
-            <div class="flex items-center gap-2 text-white ">
-                <a href="mailto:info@santhihospital.com" class="email flex items-center gap-2">
-                    <i class="fas fa-envelope p-3 rounded-full border border-white"></i>
-                    <span>santhihospital2004@gmail.com</span>
+            <div class="flex items-center gap-2 text-white">
+                <a href="mailto:shanthihospital2004@gmail.com" class="email flex items-center gap-2">
+                    <i class="fas fa-envelope p-3 rounded-full border border-[#019141]"></i>
+                    <span>shanthihospital2004@gmail.com</span>
                 </a>
             </div>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61575500786201"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/shanthi_ayurvedahospital
+                " target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://wa.me/919995206102" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
             </div>
         </div>
 
-        <!-- Navigation Bar -->
-        <nav class="flex navbarorg justify-center items-center w-full px-2 max-w-[1200px] mx-auto">
+        <!-- Improved Navigation Bar -->
+        <nav class="flex navbarorg justify-between items-center w-full px-2 max-w-[1200px] mx-auto relative">
             <a href="/" class="logo">
                 <img src="{% static 'images/shanthi.png' %}" alt="Santhi Ayurvedic Logo">
-                <div class="logo-text">
+                <div class="hidden text-[#fff] font-bold ml-2 text-xl leading-tight md:block ">
                     <h2>SANTHI</h2>
                     <h3>Ayurvedic</h3>
                 </div>
             </a>
-            <ul class="nav-menu">
-                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
-                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a>
-                </li>
-                <li><a href="{% url 'gallery' %}"
-                        class="{% if request.path == '/gallery/' %}active{% endif %}">gallery</a></li>
-                <li><a href="{% url 'treatment' %}"
-                        class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
-                <li><a href="{% url 'advtreatment' %}"
-                        class="{% if request.path == '/advtreatment/' %}active{% endif %}">Treatments</a></li>
-                <li><a href="{% url 'facilities' %}"
-                        class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
-            </ul>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+
+            <!-- Mobile menu button with improved styling -->
+            <div class="mobile-menu-btn w-[40px] h-[40px] flex justify-center items-center  rounded-full bg-[#21903F]  lg:hidden block p-2 cursor-pointer">
+                <i class="fas fa-bars text-white text-xl"></i>
             </div>
+
+            <!-- Improved nav menu with transition effects -->
+            <ul class="nav-menu hidden lg:flex lg:static absolute top-full left-0 w-full bg-black lg:bg-transparent lg:flex-row flex-col items-center z-[999] shadow-lg lg:shadow-none transition-all duration-300 ease-in-out">
+                <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+                <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a></li>
+                <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
+                <li><a href="{% url 'treatment' %}" class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
+                <li><a href="{% url 'facilities' %}" class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
+            </ul>
         </nav>
     </header>
 
     <!-- Floating Action Buttons -->
     <div class="floating-btns">
-        <a href="mailto:info@ayurvedawayanad.com" class="floating-btn">
+        <a href="mailto:shanthihospital2004@gmail.com" class="floating-btn">
             <i class="fas fa-envelope"></i>
         </a>
-        <a href="#" class="floating-btn">
+        <a href="https://wa.me/919995206102" class="floating-btn">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="tel:+1234567890" class="floating-btn">
+
+        <a href="tel:+9995206102" class="floating-btn">
             <i class="fas fa-phone-alt"></i>
         </a>
     </div>
+
+
+    <style>
+        /* Chatbot styles */
+        .chat-bot-container {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            /* Changed from right: 30px to left: 30px */
+            z-index: 1000;
+        }
+
+        .chat-bot-bubble {
+            width: 60px;
+            height: 60px;
+            background-color: #4a90e2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .chat-bot-bubble:hover {
+            transform: scale(1.05);
+            background-color: #357abd;
+        }
+
+        .chat-bot-bubble i {
+            color: rgb(131, 127, 127);
+            font-size: 24px;
+        }
+
+        .chat-bot-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            /* Changed from right: 0 to left: 0 */
+            width: 320px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .chat-header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .chat-header .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            line-height: 1.4;
+            font-size: 14px;
+        }
+
+        .bot-message {
+            background-color: #f1f1f1;
+            color: #333;
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background-color: #4a90e2;
+            color: white;
+            border-top-right-radius: 5px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-footer {
+            padding: 10px 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .chat-footer button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-footer button:hover {
+            background-color: #357abd;
+        }
+
+        /* Email form */
+        .email-form {
+            padding: 15px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #357abd;
+        }
+
+        /* Message container */
+        .messages-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Material icons */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .chat-bot-bubble {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #1179f0;
+            border-radius: 40%;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .bot-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <div class="chat-bot-container">
+        <div class="chat-bot-bubble" id="chatBubble">
+            <img src="https://t3.ftcdn.net/jpg/02/15/61/92/360_F_215619203_9mmrDaPnSHOUBfz9XVkjBAknw5XFEK0D.jpg"
+                alt="Bot Avatar" class="bot-image" />
+        </div>
+
+        <div class="chat-bot-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Website Assistant</h3>
+                <button class="close-btn" id="closeChat">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <div class="messages-container" id="messagesContainer">
+                    <div class="chat-message bot-message">
+                        Hi there! 👋 How can I help you today?
+                    </div>
+                </div>
+
+                <div class="email-form" id="emailForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder=" +91 " required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="button" class="submit-btn" id="submitEmail">Send Email</button>
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <input type="text" id="userInput" placeholder="Type a message..." autocomplete="off">
+                <button id="sendMessage">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        // DOM Elements
+        const chatBubble = document.getElementById('chatBubble');
+        const chatWindow = document.getElementById('chatWindow');
+        const closeChat = document.getElementById('closeChat');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendMessage');
+        const messagesContainer = document.getElementById('messagesContainer');
+        const emailForm = document.getElementById('emailForm');
+        const submitEmail = document.getElementById('submitEmail');
+
+        // Toggle chat window
+        chatBubble.addEventListener('click', () => {
+            chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatWindow.style.display = 'none';
+        });
+
+        // Send message
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addMessage(message, 'user');
+            userInput.value = '';
+
+            // Process message and respond
+            processMessage(message);
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            messagesContainer.appendChild(messageDiv);
+
+            // Scroll to bottom
+            const chatBody = document.getElementById('chatBody');
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Process user message and respond
+        function processMessage(message) {
+            message = message.toLowerCase();
+
+            // Simple response system
+            setTimeout(() => {
+                if (message.includes('email') || message.includes('contact') || message.includes('message') ||
+                    message.includes('help') || message.includes('support')) {
+                    addMessage("I'd be happy to help you send an email. Please fill out this form:", 'bot');
+                    showEmailForm();
+                } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+                    addMessage("Hello! How can I assist you today? If you'd like to send us a message, just let me know.", 'bot');
+                } else {
+                    addMessage("Would you like to send us an email? I can help you with that. Just type 'email' or 'contact'.", 'bot');
+                }
+            }, 500);
+        }
+
+        // Show email form
+        function showEmailForm() {
+            messagesContainer.style.display = 'none';
+            emailForm.style.display = 'flex';
+        }
+
+        // Handle email submission
+        submitEmail.addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || mobile === '' || message === '') {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+
+            // Simple mobile validation (at least 10 digits)
+            const mobileDigits = mobile.replace(/\D/g, '');
+            if (mobileDigits.length < 10) {
+                alert('Please enter a valid mobile number');
+                return;
+            }
+
+            // Here you would typically send the data to your server
+            console.log('Email submission:', { name, email, mobile, message });
+
+            // Return to chat view
+            emailForm.style.display = 'none';
+            messagesContainer.style.display = 'flex';
+
+            // Confirmation message
+            addMessage("Thanks for your message! We've received your email and will get back to you soon.", 'bot');
+        });
+
+        // Return to chat from email form
+        document.getElementById('closeChat').addEventListener('click', () => {
+            emailForm.style.display = 'none';
+            messagesContainer.style.display = 'flex';
+        });
+    </script>
 
     <!-- Page Content -->
     <div class="m-0 p-0 relative mt-[-100px]">
@@ -559,7 +991,7 @@
         {% endblock %}
     </div>
 
-    <footer class="footer-container">
+    <footer class="footer-container" style="margin-top: 50px;">
         <div class="leaf-background"></div>
         <div class="contact-header">
             <h3>Contact with ease</h3>
@@ -576,7 +1008,8 @@
                 </div>
                 <div class="info-content">
                     <h4>ADDRESS</h4>
-                    <p>KAMSH & YRC, Emily, Kalpetta,<br>Wayanad, Kerala - 673121</p>
+                    <p>shanthi Ayurveda hospital
+                        mandad, muttil, Wayanad, kerala</p>
                 </div>
             </div>
             <div class="info-item">
@@ -585,7 +1018,7 @@
                 </div>
                 <div class="info-content">
                     <h4>CALL US</h4>
-                    <p>+91 6361575496 , +91 9497872562</p>
+                    <p>+91 9995206102</p>
                 </div>
             </div>
             <div class="info-item">
@@ -594,7 +1027,8 @@
                 </div>
                 <div class="info-content">
                     <h4>EMAIL US</h4>
-                    <p>info@ayurvedawayanad.com</p>
+                    <p>
+                        shanthihospital2004@gmail.com</p>
                 </div>
             </div>
         </div>
@@ -602,23 +1036,21 @@
         <div class="footer-nav">
             <a href="#">Home</a> |
             <a href="#">About us</a> |
+            <a href="#">Gallery</a> |
             <a href="#">Treatments</a> |
-            <a href="#">Packages</a> |
-            <a href="#">Contact</a>
+            <!-- <a href="#">Treatments</a> | -->
+            <a href="#">Facilities</a>
         </div>
         <div class="footer-copyright">
-            © 2024 All rights reservedSanthi Ayurvedic Multispeciality Hospital & Yoga Research Centre
+            © 2025 All rights reserved Santhi Ayurvedic Hospital
         </div>
         <div class="footer-powered">
-            Powered by Meridian Solutions Inc.
+
         </div>
     </footer>
 
-
-
     <!-- Allow for additional scripts to be added by child templates -->
     {% block additional_scripts %}{% endblock %}
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -633,15 +1065,16 @@
                 }
             });
 
-            // Mobile menu toggle
+            // Mobile menu toggle with improved animations
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navMenu = document.querySelector('.nav-menu');
 
             if (mobileMenuBtn && navMenu) {
                 mobileMenuBtn.addEventListener('click', function () {
                     navMenu.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
 
-                    // Toggle icon between bars and times
+                    // Toggle icon between bars and times with animation
                     const icon = this.querySelector('i');
                     if (icon.classList.contains('fa-bars')) {
                         icon.classList.remove('fa-bars');
@@ -651,9 +1084,35 @@
                         icon.classList.add('fa-bars');
                     }
                 });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!mobileMenuBtn.contains(event.target) && !navMenu.contains(event.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close menu when clicking on a menu item
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+
+                        const icon = mobileMenuBtn.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
             }
         });
     </script>
+
     <script>
         window.addEventListener('scroll', function () {
             const headerTop = document.querySelector('.header-toporg');
@@ -668,6 +1127,7 @@
             }
         });
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Back to top button functionality
@@ -675,7 +1135,7 @@
             backToTop.className = 'back-to-top';
             backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
             backToTop.style.position = 'fixed';
-            backToTop.style.right = '20px';
+            backToTop.style.right = '15px';
             backToTop.style.bottom = '20px';
             backToTop.style.width = '50px';
             backToTop.style.height = '50px';
@@ -698,6 +1158,77 @@
             });
         });
     </script>
+
+
+
+
+    <!-- Other HTML and CSS above -->
+
+    <!-- Add this just before your existing JS starts -->
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+
+    <!-- Now your existing script can use getCookie -->
+    <script>
+        submitEmail.addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mobile = document.getElementById('mobile').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const formData = { name, email, mobile, message };
+            const csrftoken = getCookie('csrftoken'); // ✅ This works now
+
+            submitEmail.disabled = true;
+            submitEmail.textContent = "Sending...";
+
+            fetch('/contact-form/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json().then(data => {
+                    if (!response.ok) throw new Error(data.error || 'Unknown error');
+                    return data;
+                }))
+                .then(data => {
+                    emailForm.style.display = 'none';
+                    messagesContainer.style.display = 'flex';
+                    addMessage("Thanks for your message! We've received it and will get back to you soon.", 'bot');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    emailForm.style.display = 'none';
+                    messagesContainer.style.display = 'flex';
+                    addMessage("Sorry, something went wrong. Please try again later.", 'bot');
+                })
+                .finally(() => {
+                    submitEmail.disabled = false;
+                    submitEmail.textContent = "Send Email";
+                });
+        });
+    </script>
+
+
+
+
 
 
 </body>

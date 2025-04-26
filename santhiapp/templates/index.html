@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +9,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Ayurveda Treatment Banner</title>
     <style>
         * {
@@ -70,6 +74,7 @@
             position: relative;
             z-index: 2;
             max-width: 1000px;
+            padding: 0 20px;
         }
 
         .banner-slide:nth-child(1) {
@@ -118,7 +123,7 @@
         }
 
         .banner-btn:hover {
-            background-color: #3a5d4a;
+            background-color: #019141;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -145,158 +150,7 @@
             background-color: white;
         }
 
-        /* package sections (unchanged) */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .explore-text {
-            color: #aacc00;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .description {
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .packages-section {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .image-section {
-            flex: 1;
-            display: flex;
-            position: relative;
-            min-width: 300px;
-        }
-
-        .image-left {
-            width: 50%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .image-right {
-            width: 50%;
-            height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .renew-card {
-            position: absolute;
-            width: 280px;
-            height: 160px;
-            background-color: white;
-            border: 2px solid #aacc00;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .leaf-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-        }
-
-        .renew-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .renew-text {
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .packages-list {
-            flex: 1;
-            padding-left: 30px;
-            min-width: 300px;
-        }
-
-        .package-item {
-            background-color: #aacc00;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .package-highlight {
-            font-weight: bold;
-        }
-
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .whatsapp-icon {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
-
-        @media (max-width: 768px) {
-            .packages-section {
-                flex-direction: column;
-            }
-
-            .packages-list {
-                padding-left: 0;
-                margin-top: 30px;
-            }
-
-            .image-section {
-                height: 400px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-
-        /* about section  */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+        /* about section */
         .about-section {
             max-width: 1200px;
             margin: 0 auto;
@@ -384,178 +238,116 @@
             border-radius: 10px;
         }
 
-        @media (max-width: 768px) {
-            .about-section {
-                flex-direction: column;
-            }
-
-            .about-images {
-                order: -1;
-            }
-        }
-
-        /* why choos us section */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: #f8f8f8;
-            padding: 40px 0;
-        }
-
+        /* why choose us section */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 1400px;
+            margin: 30px auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #f8f0e3;
+            color: #9b7d45;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .header h2 {
+            font-size: 42px;
+            color: #0f1c3f;
+            font-weight: bold;
         }
 
         .slider-container {
             position: relative;
             overflow: hidden;
-            padding: 20px 0;
         }
 
         .slider {
             display: flex;
             transition: transform 0.5s ease;
-            gap: 20px;
         }
 
-        .slider-card {
-            flex: 0 0 calc(25% - 15px);
-            min-width: 270px;
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .slider-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .icon-container {
-            width: 60px;
-            height: 60px;
-            background-color: #FFF5E6;
-            border-radius: 50%;
+        .slide {
+            min-width: 100%;
             display: flex;
             justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
+            min-width: 250px;
         }
 
-        .obesity .icon-container {
-            background-color: #F0F5FF;
+        .icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 25px;
+            object-fit: contain;
         }
 
-        .diabetes .icon-container {
-            background-color: #F0FFF5;
-        }
-
-        .geriatrics .icon-container {
-            background-color: #FFF0F0;
-        }
-
-        .card-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1A2B4A;
+        .card h3 {
+            font-size: 24px;
+            color: #0f1c3f;
             margin-bottom: 15px;
         }
 
-        .card-description {
-            font-size: 14px;
+        .card p {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 16px;
         }
 
-        .read-more {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1A2B4A;
-            text-decoration: none;
-        }
-
-        .read-more svg {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
-        }
-
-        .read-more:hover svg {
-            transform: translateX(4px);
-        }
-
-        .slider-nav {
+        .nav-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: #0f172a;
+            width: 50px;
+            height: 50px;
+            background-color: #0f1c3f;
             color: white;
             border: none;
             border-radius: 50%;
             cursor: pointer;
+            font-size: 20px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             z-index: 10;
-            transition: background 0.3s ease;
         }
 
-        .slider-nav:hover {
-            background: #1e293b;
+        .prev {
+            left: 5px;
+            background-color: #f8f0e3;
+            color: #9b7d45;
         }
 
-        .slider-nav.prev {
-            left: 10px;
+        .next {
+            right:5px;
+            background-color: #f8f0e3;
+            color: #9b7d45;
         }
 
-        .slider-nav.next {
-            right: 10px;
-        }
-
-        @media (max-width: 1024px) {
-            .slider-card {
-                flex: 0 0 calc(33.333% - 14px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .slider-card {
-                flex: 0 0 calc(50% - 10px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .slider-card {
-                flex: 0 0 100%;
-            }
-        }
-
-        /* treatment section css */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f8f8f8;
-        }
-
-        .header {
+        /* treatment section */
+        .treatment-header {
             text-align: center;
             padding: 40px 20px;
             background-color: white;
@@ -591,29 +383,20 @@
             right: 20px;
         }
 
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
+        .swiper {
             width: 100%;
-            height: 400px;
+            padding: 30px 0;
         }
 
-        .treatments-container {
-            display: flex;
-            transition: transform 0.5s ease;
-            height: 100%;
-            width: max-content;
-        }
-
-        .treatment-card {
-            width: 33.33vw;
-            /* Show 3 items at once */
+        .swiper-slide {
+            width: 300px;
             height: 400px;
             position: relative;
             overflow: hidden;
+            border-radius: 10px;
         }
 
-        .treatment-card img {
+        .swiper-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -627,6 +410,7 @@
             width: 100%;
             text-align: center;
             color: white;
+            padding: 0 20px;
         }
 
         .card-title {
@@ -649,35 +433,25 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 14px;
+            border-radius: 20px;
         }
 
         .view-more-btn:hover {
             background: rgba(255, 255, 255, 0.2);
         }
 
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
             width: 40px;
             height: 40px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            font-size: 20px;
             border-radius: 50%;
         }
 
-        .slider-nav.prev {
-            left: 10px;
-        }
-
-        .slider-nav.next {
-            right: 10px;
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
         }
 
         .bottle-icon {
@@ -690,30 +464,374 @@
             height: 30px;
         }
 
-        /* Indicators for carousel position */
-        .indicators {
+        /* whatsapp button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+
+            /* Banner Section */
+            .banner-container {
+                height: 500px;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+                margin-bottom: 15px;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+
+            .banner-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            /* About Section */
+            .about-section {
+                flex-direction: column;
+                padding: 30px 15px;
+                gap: 20px;
+            }
+
+            .about-images {
+                order: -1;
+            }
+
+            .about-title {
+                font-size: 28px;
+            }
+
+            .about-subtitle {
+                font-size: 22px;
+            }
+
+            /* Why Choose Us Section */
+            .slide {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .card {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .prev {
+                left: -20px;
+            }
+
+            .next {
+                right: -20px;
+            }
+
+            /* Treatments Section */
+            .header-title {
+                font-size: 28px;
+            }
+
+            .header-desc {
+                font-size: 14px;
+                padding: 0 15px;
+            }
+
+            .swiper-slide {
+                width: 85% !important;
+            }
+
+            .card-title {
+                font-size: 24px;
+            }
+
+            /* WhatsApp Button */
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .header-icons {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Extra small devices */
+            .banner-container {
+                height: 600px;
+            }
+
+            .banner-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-title {
+                font-size: 24px;
+            }
+
+            .header h2 {
+                font-size: 32px;
+            }
+
+            .card h3 {
+                font-size: 20px;
+            }
+
+            .card p {
+                font-size: 14px;
+            }
+        }
+
+        /* exolire wayanad */
+
+
+        .banner-container_gallery {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-bg {
             position: absolute;
-            bottom: 15px;
+            top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://s.hdnux.com/photos/01/17/11/53/20749004/4/rawImage.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .attractions-text {
+            font-family: "Marck Script", cursive;
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: white;
+            text-align: left;
+        }
+
+        .explore-text {
+            font-size: 60px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .wayanad-text {
+            font-size: 60px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .decorative-line {
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            background-color: white;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .decorative-curl {
+            display: inline-block;
+            color: #8BC34A;
+            font-size: 28px;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #221056;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: rgba(100, 8, 100, 0.9);
+        }
+
+        .arrow {
+            margin-left: 15px;
+        }
+
+        .leaf-decoration {
+            position: absolute;
+            top: 0;
             right: 0;
+            width: 150px;
+            height: 150px;
+            opacity: 0.7;
+        }
+
+        /* gallery section in index page */
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .gallery-header h1 {
+            font-size: 3rem;
+            color: #4b164b;
+            font-weight: normal;
+            padding: 10px 0;
+        }
+
+        .flourish {
+            color: #8aae5a;
+            font-size: 2rem;
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            align-items: center;
+
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .magnify-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(138, 174, 90, 0.8);
+            border-radius: 50%;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
+        .gallery-item:hover .magnify-icon {
+            opacity: 1;
         }
 
-        .indicator.active {
-            background: white;
+        .magnify-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
         }
 
-        /*  */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .gallery-header h1 {
+                font-size: 2.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -768,11 +886,12 @@
             <span class="indicator" onclick="setSlide(3)"></span>
         </div>
     </div>
-    <!-- about section  -->
+
+    <!-- About Section -->
     <section class="about-section">
         <div class="about-content">
             <p class="about-label">ABOUT US</p>
-            <h1 class="about-title">Santhi Ayurveda Hospital</h1>
+            <div class="leading-tight text-3xl font-bold md:text-5xl">Santhi Ayurveda Hospital</div>
             <h2 class="about-subtitle"></h2>
 
             <p class="about-description">
@@ -790,7 +909,7 @@
                 Nirava Ayurveda Holistic Centre package.
             </p>
 
-            <a href="#" class="contact-btn">
+            <a href="tel:+9995206102" class="contact-btn">
                 Contact Us
                 <span class="arrow-icon">→</span>
             </a>
@@ -804,408 +923,381 @@
         </div>
     </section>
 
-    <!-- why choos us section -->
+    <!-- Why Choose Us Section -->
     <div class="container">
-        <div class="contact-header">
-            <h3>why</h3>
-            <h2>Why Choos Us</h2>
-        </div>
+
+
         <div class="slider-container">
-            <button class="slider-nav prev">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-
             <div class="slider">
-                <div class="slider-card low-back">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E89F31" stroke-width="2">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                            <path d="M15 9a3 3 0 0 0-3-3 3 3 0 0 0-3 3v6a3 3 0 0 0 3 3 3 3 0 0 0 3-3" />
-                            <path d="M12 14a2 2 0 0 0 0-4" />
-                        </svg>
+                <div class="slide">
+                    <div class="card">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSU2uTmvOkQgEiBwIwXdP7GrLl8s_TXDnR0kl8fZrO_U6zhYkFF"
+                            class="icon" alt="Since 1908 icon" />
+                        <h3>Since 1908</h3>
+                        <p>Pioneers in authentic ayurveda and yoga since 1908. The centre is run by fourth generation
+                            physicians with a tradition spanning centuries.</p>
                     </div>
-                    <h3 class="card-title" style="color: black;">Low Back Ache</h3>
-                    <p class="card-description">Oral medication and treatments for a sudden or gradual onset of low back
-                        ache.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
+
+                    <div class="card">
+                        <img src="https://st2.depositphotos.com/5266903/8986/v/450/depositphotos_89861218-stock-illustration-patient-ok-rounded-vector-icon.jpg"
+                            class="icon" alt="Patients icon" />
+                        <h3>Patients</h3>
+                        <p>Have successfully treated more than 2.5 million patients with customized treatments and
+                            medicines to provide the most efficient healing.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://cdn-icons-png.freepik.com/512/12522/12522390.png" class="icon"
+                            alt="Medicines icon" />
+                        <h3>Medicines</h3>
+                        <p>Our effective ayurveda medicines are produced in-house at our facility, adhering to the
+                            highest standards of quality.</p>
+                    </div>
                 </div>
 
-                <div class="slider-card obesity">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="10" r="3" />
-                            <path d="M7 18.5C7 16.6 9.2 15 12 15s5 1.6 5 3.5" />
-                        </svg>
+                <div class="slide">
+                    <div class="card">
+                        <img src="https://st2.depositphotos.com/5266903/11824/v/950/depositphotos_118246490-stock-illustration-client-care-hand-flat-vector.jpg"
+                            class="icon" alt="Treatments icon" />
+                        <h3>Treatments</h3>
+                        <p>Traditional and authentic treatments performed by experienced therapists trained in our own
+                            institution.</p>
                     </div>
-                    <h3 class="card-title" style="color: black;">Obesity</h3>
-                    <p class="card-description">A combination of ayurvedic treatments for obesity based on the root
-                        cause and lifestyle.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
 
-                <div class="slider-card diabetes">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2">
-                            <path
-                                d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24" />
-                        </svg>
+                    <div class="card">
+                        <img src="https://www.bildteknik.com/wp-content/uploads/Remote-consultation-icon.png"
+                            class="icon" alt="Consultation icon" />
+                        <h3>Consultation</h3>
+                        <p>One-on-one consultation with our expert physicians who create personalized treatment plans.
+                        </p>
                     </div>
-                    <h3 class="card-title" style="color: black;">Diabetes</h3>
-                    <p class="card-description">Oral medication and treatments to improve metabolic disorders and
-                        maintain healthy glucose levels.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
 
-                <div class="slider-card geriatrics">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2">
-                            <path d="M13 5c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z" />
-                            <path d="M19 9h-3l-1.5 3-2-11L11 9H8" />
-                            <path d="M9 17v-4h5.5M5 18c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z" />
-                            <path d="M17 18c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z" />
-                        </svg>
+                    <div class="card">
+                        <img src="https://cdn-icons-png.freepik.com/512/12445/12445043.png" class="icon"
+                            alt="Research icon" />
+                        <h3>Research</h3>
+                        <p>Continuing research and innovation while preserving traditional ayurvedic knowledge.</p>
                     </div>
-                    <h3 class="card-title" style="color: black;">Geriatrics</h3>
-                    <p class="card-description">Healthcare for elderly people preventing and treating their diseases and
-                        disabilities.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="slider-card arthritis">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2">
-                            <path
-                                d="M2 12h6M22 12h-6M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Arthritis</h3>
-                    <p class="card-description">Treatment for joint inflammation, swelling, and pain through
-                        personalized ayurvedic therapies.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="slider-card digestive">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
-                            <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z" />
-                            <path d="M8 14h8" />
-                            <path d="M8 10h8" />
-                            <path d="M8 18h8" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Digestive Health</h3>
-                    <p class="card-description">Specialized treatments for various digestive disorders focusing on gut
-                        health improvement.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-                <div class="slider-card digestive">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
-                            <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z" />
-                            <path d="M8 14h8" />
-                            <path d="M8 10h8" />
-                            <path d="M8 18h8" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Digestive Health</h3>
-                    <p class="card-description">Specialized treatments for various digestive disorders focusing on gut
-                        health improvement.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-                <div class="slider-card digestive">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
-                            <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z" />
-                            <path d="M8 14h8" />
-                            <path d="M8 10h8" />
-                            <path d="M8 18h8" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Digestive Health</h3>
-                    <p class="card-description">Specialized treatments for various digestive disorders focusing on gut
-                        health improvement.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-                <div class="slider-card digestive">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
-                            <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z" />
-                            <path d="M8 14h8" />
-                            <path d="M8 10h8" />
-                            <path d="M8 18h8" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Digestive Health</h3>
-                    <p class="card-description">Specialized treatments for various digestive disorders focusing on gut
-                        health improvement.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
-                <div class="slider-card digestive">
-                    <div class="icon-container">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2">
-                            <path d="M12 2a8 8 0 0 0-8 8v12h16V10a8 8 0 0 0-8-8z" />
-                            <path d="M8 14h8" />
-                            <path d="M8 10h8" />
-                            <path d="M8 18h8" />
-                        </svg>
-                    </div>
-                    <h3 class="card-title" style="color: black;">Digestive Health</h3>
-                    <p class="card-description">Specialized treatments for various digestive disorders focusing on gut
-                        health improvement.</p>
-                    <a href="#" class="read-more">
-                        Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
                 </div>
             </div>
 
-            <button class="slider-nav next">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
+            <button class="nav-button prev" id="prevBtn">&#10094;</button>
+            <button class="nav-button next" id="nextBtn">&#10095;</button>
         </div>
     </div>
 
-
-
-
-
-    <!-- treatment sections -->
-    <div class="header">
+    <!-- Treatments Section -->
+    <div class="treatment-header">
         <div class="header-icons left">
-            <svg class="bottle-icon" viewBox="0 0 100 160">
-                <rect x="30" y="40" width="40" height="80" rx="5" fill="#8B4513" />
-                <rect x="35" y="20" width="30" height="20" rx="5" fill="#8B4513" />
-                <ellipse cx="50" cy="140" rx="30" ry="10" fill="#8B4513" />
-            </svg>
-            <svg class="leaf-icon" viewBox="0 0 100 50">
-                <path d="M10,25 Q50,0 90,25 Q50,50 10,25" fill="#8cc63f" />
-            </svg>
+            <img src="https://png.pngtree.com/png-clipart/20240406/original/pngtree-aloe-vera-png-image_14768601.png"
+                alt="Header Icon" class="header-image">
         </div>
+
 
         <h1 class="header-title">Healing with Ayurveda</h1>
         <p class="header-desc">Ayurveda, an ancient system of medicine originating in India, offers holistic treatments
             aimed at balancing the body, mind, and spirit. Various therapeutic techniques</p>
 
         <div class="header-icons right">
-            <svg class="leaf-icon" viewBox="0 0 100 50">
-                <path d="M10,25 Q50,0 90,25 Q50,50 10,25" fill="#8cc63f" />
-            </svg>
-            <svg class="bottle-icon" viewBox="0 0 100 160">
-                <rect x="30" y="40" width="40" height="80" rx="5" fill="#8B4513" />
-                <rect x="35" y="20" width="30" height="20" rx="5" fill="#8B4513" />
-                <ellipse cx="50" cy="140" rx="30" ry="10" fill="#8B4513" />
-            </svg>
+            <img src="https://png.pngtree.com/png-clipart/20240406/original/pngtree-aloe-vera-png-image_14768601.png"
+                alt="Header Icon" class="header-image">
         </div>
-    </div>
 
-    <div class="carousel-container">
-        <div class="treatments-container">
-            <div class="treatment-card">
+    </div>
+    <style>
+        .header-image {
+            width: 80px;
+            height: auto;
+            /* Add more styles if needed */
+        }
+    </style>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide treatment-card">
                 <img src="https://content.presspage.com/uploads/685/1920_kumarakomlakeresort-kumarakom-2-2.jpg?10000"
-                    alt="Abhyanga Treatment">
+                    alt="Abhyanga Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Abhyanga</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
+
                 </div>
             </div>
 
-            <div class="treatment-card">
-                <img src="https://i.ytimg.com/vi/dHd9uu3LYiQ/maxresdefault.jpg" alt="Steam Treatment">
+            <div class="swiper-slide treatment-card">
+                <img src="https://i.ytimg.com/vi/dHd9uu3LYiQ/maxresdefault.jpg" alt="Steam Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Steam</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
                 </div>
             </div>
 
-            <div class="treatment-card">
+            <div class="swiper-slide treatment-card">
                 <img src="https://media1.thrillophilia.com/filestore/qcjpdvtgbcif3zd5igf9a9etb82r_Shirodhara-lead.jpg"
-                    alt="Navarakizhi Treatment">
+                    alt="Navarakizhi Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Navarakizhi</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
                 </div>
             </div>
 
-            <div class="treatment-card">
+            <div class="swiper-slide treatment-card">
                 <img src="https://karmacommunity.karmagroup.com/wp-content/uploads/2020/08/images_karmagroup_banner-WP.jpg"
-                    alt="Shirodhara Treatment">
+                    alt="Shirodhara Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Shirodhara</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
                 </div>
             </div>
 
-            <div class="treatment-card">
-                <img src="https://treeoflife.cz/data/filecache/36/LDF_375.jpg" alt="Panchakarma Treatment">
+            <div class="swiper-slide treatment-card">
+                <img src="https://treeoflife.cz/data/filecache/36/LDF_375.jpg" alt="Panchakarma Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Panchakarma</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
                 </div>
             </div>
 
-            <div class="treatment-card">
+            <div class="swiper-slide treatment-card">
                 <img src="https://avatars.mds.yandex.net/i?id=268b0aa7b7323809f2a7afccd5bb4cf91add767d-11008180-images-thumbs&n=13"
-                    alt="Udvartana Treatment">
+                    alt="Udvartana Treatment" />
                 <div class="card-content">
                     <h2 class="card-title">Udvartana</h2>
                     <p class="card-subtitle">Ayurvedic Therapy</p>
-                    <button class="view-more-btn">View More</button>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide treatment-card">
+                <img src="https://www.topmagazine.cz/wp-content/uploads/2021/04/pichu.jpg"
+                    alt="Udvartana Treatment" />
+                <div class="card-content">
+                    <h2 class="card-title">Shiropichu</h2>
+                    <p class="card-subtitle">Ayurvedic Therapy</p>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide treatment-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5fa5c946b3f20966e04733c6/1614286101461-ZC6GB90MELKI0U2MV28V/Greevavasthi_1600x.jpg?format=2500w"
+                    alt="Udvartana Treatment" />
+                <div class="card-content">
+                    <h2 class="card-title">Yapana Vasti</h2>
+                    <p class="card-subtitle">Ayurvedic Therapy</p>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide treatment-card">
+                <img src="https://avatars.mds.yandex.net/get-ydo/12406519/2a0000018dae5b620b3ad015f09eb96fc010/diploma"
+                    alt="Udvartana Treatment" />
+                <div class="card-content">
+                    <h2 class="card-title">podikizhi</h2>
+                    <p class="card-subtitle">Ayurvedic Therapy</p>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper-slide treatment-card">
+                <img src="https://avatars.mds.yandex.net/get-altay/5307539/2a0000017b0fe8ed4de2a80da8f8989df632/XXL_height"
+                    alt="Udvartana Treatment" />
+                <div class="card-content">
+                    <h2 class="card-title">Dhara</h2>
+                    <p class="card-subtitle">Ayurvedic Therapy</p>
+                    <a href="#">
+                        <!-- <button class="view-more-btn">View More</button> -->
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="slider-nav prev">&#10094;</div>
-        <div class="slider-nav next">&#10095;</div>
+        <!-- Navigation arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-        <div class="indicators">
-            <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="1"></div>
+        <!-- Pagination (dots) -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- WhatsApp Button -->
+
+    <!-- explore wayanad -->
+    <div class="banner-container_gallery">
+        <div class="banner-bg"></div>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="md:flex md:justify-center md:gap-5">
+                <div>
+                    <div class="text-3xl font-semibold text-center md:text-3xl lg:text-5xl">Explore</div>
+                </div>
+                <div class="text-3xl text-center mb-5 md:text-3xl lg:text-5xl font-semibold">Wayanad</div>
+            </div>
+            <p class="description">
+                Wayanad - the land where the wild beauty of nature exists in its very best is the perfect setting
+                to enjoy the beauty of nature and undergo Ayurvedic treatments
+            </p>
+            <a href="{% url 'gallery' %}#wayanad" class="cta-button">
+                View More Info
+                <span class="arrow">→</span>
+            </a>
         </div>
     </div>
 
+
+
+
+    <!-- galler section in index page -->
+    <div class="gallery-header">
+        <h1><span class="flourish">❦</span>Photo Gallery<span class="flourish">❦</span></h1>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+
+            <img src="https://kompastour.com/useruploads/hotels/hotel_b6cd1738d9.jpg"
+                alt="Group photo of staff and visitors outside building">
+
+
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                             0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                             0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                             11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.ytimg.com/vi/7KUEUJY5PNI/maxresdefault.jpg"
+                alt="Treatment session in progress with patients">
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                         16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                         0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                         0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                         11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://i.ytimg.com/vi/ZTz4nnc4EWA/maxresdefault.jpg" alt="Ayurvedic therapy session">
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                             0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                             0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                             11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://www.swantour.com/blogs/wp-content/uploads/2019/03/Ayurvedic-Treatments-in-Kerala.jpg"
+                alt="Practitioners with patients">
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                         16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                         0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                         0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                         11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://somatheeram.net/images/climages/ayurvedic1.png" alt="Yoga session in spacious hall">
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                         16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                         0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                         0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                         11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://experts-medical.com/wp-content/uploads/2022/02/yoga1.jpg"
+                alt="Group of international visitors and staff">
+            <div class="magnify-icon">
+                <a href="{% url 'gallery' %}#gallery">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                             16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 
+                             0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 
+                             0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 
+                             11.99 14 9.5 14z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <script>
-
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-
-            // Update active dot
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-
-        // Auto slide (optional)
-        let interval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            updateSlider();
-        }, 5000);
-
-        // Pause auto slide on hover
-        slider.addEventListener('mouseenter', () => {
-            clearInterval(interval);
-        });
-
-        slider.addEventListener('mouseleave', () => {
-            interval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateSlider();
-            }, 5000);
-        });
-    </script>
-    <script>
-        // JavaScript for the slideshow functionality
+        // JavaScript for the banner slideshow
         let slideIndex = 0;
         const slides = document.querySelectorAll('.banner-slide');
         const indicators = document.querySelectorAll('.indicator');
 
-        // Function to show a specific slide
         function setSlide(index) {
             slideIndex = index;
             updateSlides();
         }
 
-        // Function to update slides display
         function updateSlides() {
-            // Hide all slides
             slides.forEach(slide => {
                 slide.classList.remove('active');
             });
 
-            // Update indicators
             indicators.forEach(indicator => {
                 indicator.classList.remove('active');
             });
 
-            // Show current slide and highlight current indicator
             slides[slideIndex].classList.add('active');
             indicators[slideIndex].classList.add('active');
         }
 
-        // Function to move to the next slide
         function nextSlide() {
             slideIndex++;
             if (slideIndex >= slides.length) {
@@ -1214,218 +1306,64 @@
             updateSlides();
         }
 
-        // Auto-advance slides every 5 seconds
         setInterval(nextSlide, 5000);
-    </script>
 
-    <script>
+        // JavaScript for Why Choose Us slider
         document.addEventListener('DOMContentLoaded', function () {
-            // Get slider elements
             const slider = document.querySelector('.slider');
             const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (!slider || !prevBtn || !nextBtn) return;
 
             let currentIndex = 0;
             const totalSlides = slides.length;
 
-            // Function to update the slider position
             function updateSlider() {
                 slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-                // Update active dot
-                dots.forEach((dot, index) => {
-                    if (index === currentIndex) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
             }
 
-            // Event listeners for navigation buttons
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSlider();
-            });
-
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', function () {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateSlider();
             });
 
-            // Event listeners for dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = index;
-                    updateSlider();
-                });
-            });
-
-            // Auto-slide functionality
-            let interval = setInterval(() => {
+            nextBtn.addEventListener('click', function () {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateSlider();
-            }, 5000);
-
-            // Pause auto-slide on hover
-            slider.addEventListener('mouseenter', () => {
-                clearInterval(interval);
             });
-
-            slider.addEventListener('mouseleave', () => {
-                interval = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSlider();
-                }, 5000);
-            });
-
-            // Initialize slider
-            updateSlider();
         });
-    </script>
 
-    <!-- treament section js -->
-    <script>
+        // Initialize Swiper for treatments
         document.addEventListener('DOMContentLoaded', function () {
-            const container = document.querySelector('.treatments-container');
-            const cards = document.querySelectorAll('.treatment-card');
-            const prevBtn = document.querySelector('.slider-nav.prev');
-            const nextBtn = document.querySelector('.slider-nav.next');
-            const indicators = document.querySelectorAll('.indicator');
-
-            let currentIndex = 0;
-            const cardWidth = cards[0].offsetWidth;
-            const visibleCards = 3; // Number of cards visible at once
-            const maxIndex = Math.ceil(cards.length / visibleCards) - 1;
-
-            // Update carousel position
-            function updateCarousel() {
-                const offset = -currentIndex * (cardWidth * visibleCards);
-                container.style.transform = `translateX(${offset}px)`;
-
-                // Update indicators
-                indicators.forEach(ind => ind.classList.remove('active'));
-                indicators[currentIndex].classList.add('active');
-            }
-
-            // Navigation with arrows
-            prevBtn.addEventListener('click', function () {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCarousel();
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
                 }
             });
-
-            nextBtn.addEventListener('click', function () {
-                if (currentIndex < maxIndex) {
-                    currentIndex++;
-                    updateCarousel();
-                }
-            });
-
-            // Navigation with indicators
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function () {
-                    currentIndex = index;
-                    updateCarousel();
-                });
-            });
         });
     </script>
-
-    <!-- treatment slider new js -->
-    <script>
-        const slider = document.querySelector('.slider');
-        const prevBtn = document.querySelector('.slider-nav.prev');
-        const nextBtn = document.querySelector('.slider-nav.next');
-        const cards = document.querySelectorAll('.slider-card');
-
-        let currentPosition = 0;
-        const cardWidth = cards[0].offsetWidth + 20; // Card width + gap
-        const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
-        const maxPosition = (cards.length - visibleCards) * cardWidth;
-
-        // Initialize slider position
-        updateSliderPosition();
-
-        prevBtn.addEventListener('click', () => {
-            currentPosition = Math.max(currentPosition - cardWidth, 0);
-            updateSliderPosition();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentPosition = Math.min(currentPosition + cardWidth, maxPosition);
-            updateSliderPosition();
-        });
-
-        function updateSliderPosition() {
-            slider.style.transform = `translateX(-${currentPosition}px)`;
-
-            // Update button states
-            prevBtn.style.opacity = currentPosition === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentPosition >= maxPosition ? '0.5' : '1';
-        }
-
-        // Update on window resize
-        window.addEventListener('resize', () => {
-            const newCardWidth = cards[0].offsetWidth + 20;
-            const newVisibleCards = Math.floor(slider.offsetWidth / newCardWidth);
-            const newMaxPosition = (cards.length - newVisibleCards) * newCardWidth;
-
-            // Reset position if needed
-            currentPosition = Math.min(currentPosition, newMaxPosition);
-            updateSliderPosition();
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    // Why Choose Us section slider
-    const slider = document.querySelector('.slider');
-    const prevBtn = document.querySelector('.slider-container .slider-nav.prev');
-    const nextBtn = document.querySelector('.slider-container .slider-nav.next');
-    const cards = document.querySelectorAll('.slider-card');
-    
-    if (slider && prevBtn && nextBtn && cards.length > 0) {
-        let currentPosition = 0;
-        const cardWidth = cards[0].offsetWidth + 20; // Card width + gap
-        const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
-        const maxPosition = Math.max(0, (cards.length - visibleCards) * cardWidth);
-        
-        function updateSliderPosition() {
-            slider.style.transform = `translateX(-${currentPosition}px)`;
-            prevBtn.style.opacity = currentPosition === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentPosition >= maxPosition ? '0.5' : '1';
-        }
-        
-        prevBtn.addEventListener('click', function() {
-            currentPosition = Math.max(currentPosition - cardWidth, 0);
-            updateSliderPosition();
-        });
-        
-        nextBtn.addEventListener('click', function() {
-            currentPosition = Math.min(currentPosition + cardWidth, maxPosition);
-            updateSliderPosition();
-        });
-        
-        // Initial position
-        updateSliderPosition();
-        
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            const newCardWidth = cards[0].offsetWidth + 20;
-            const newVisibleCards = Math.floor(slider.offsetWidth / newCardWidth);
-            const newMaxPosition = Math.max(0, (cards.length - newVisibleCards) * newCardWidth);
-            
-            // Reset position if needed
-            currentPosition = Math.min(currentPosition, newMaxPosition);
-            updateSliderPosition();
-        });
-    }
-});
-    </script>
-
 </body>
 
 </html>

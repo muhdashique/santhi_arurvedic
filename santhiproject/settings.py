@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e@ml+i0ice1ko_yh!(-^eh-7)tpptdav!jih4*6f%0xx4%e9l%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shanthiayurveda.in','www.shanthiayurveda.in']
 
 
 # Application definition
@@ -74,14 +74,20 @@ WSGI_APPLICATION = 'santhiproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'santhiHospital',  # Replace with your database name
+#         'USER': 'postgres',  # Replace with your database username
+#         'PASSWORD': 'info@imc',  # Replace with your database password
+#         'HOST': 'localhost',  # For local development, use 'localhost' or '127.0.0.1'
+#         'PORT': '5432',  # Default PostgreSQL port is 5432
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'santhiHospital',  # Replace with your database name
-        'USER': 'postgres',  # Replace with your database username
-        'PASSWORD': '1234',  # Replace with your database password
-        'HOST': 'localhost',  # For local development, use 'localhost' or '127.0.0.1'
-        'PORT': '5432',  # Default PostgreSQL port is 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # This will create a db.sqlite3 file in your project root
     }
 }
 
@@ -136,3 +142,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shanthihospital2004@gmail.com'  # Your Gmail or other SMTP email
+EMAIL_HOST_PASSWORD = 'ywtcmyqbiyhhkixe'  # Use an App Password (not your regular password)
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

@@ -11,5 +11,6 @@ urlpatterns = [
       path('gallery/',views.gallery,name='gallery'),
       path('treatment/',views.treatment,name='treatment'),
       path('advtreatment/',views.advtreatment,name='advtreatment'),
+       path('contact-form/', views.contact_form, name='contact_form'),
 
 ]

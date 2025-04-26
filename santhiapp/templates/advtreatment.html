@@ -10,6 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayurveda Treatment Banner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -116,7 +120,7 @@
         }
 
         .banner-btn:hover {
-            background-color: #3a5d4a;
+            background-color: #019141;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -296,7 +300,7 @@
         }
 
         .treatment-section {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -318,8 +322,8 @@
         }
 
         .treatment-image {
-            width: 100%;
-            height: 230px;
+            width: 1200px;
+            height: 450px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 15px;
@@ -522,6 +526,57 @@
                 bottom: -30px;
             }
         }
+        /* whatsapp */
+        .whatsapp-enquiry {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-gallery figure {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-gallery figcaption {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+/* If you want to add the WhatsApp icon, include Font Awesome in your project */
     </style>
 </head>
 
@@ -598,14 +653,14 @@
             <h2>Treatments</h2>
         </div>
         <!-- Pizhichil Treatment -->
-        <div class="treatment-card">
-            <h2 class="treatment-title">Pizhichil</h2>
-            <img src="https://akayurvediclinic.com/images/slider/slide01.jpg" alt="Pizhichil Treatment"
+        <div class="treatment-card" id="migraine">
+            <h2 class="treatment-title">Migraine</h2>
+            <img src="https://cdn.sanity.io/images/0vv8moc6/pharmacytimes/20889be9c8c12dc41a85d9e54ca3d9942207c31d-5616x3744.jpg?fit=crop&amp;auto=format" alt="Pizhichil Treatment"
                 class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    The patient would be examined by the doctors and the oil to be used would be prescribed. The oil
-                    would be slightly heated. A clean cloth bundle would be kept ready.
+                    Migraine is a type of headache that causes intense, throbbing pain—usually on one side of the head. 
+                    It’s often accompanied by symptoms like nausea, vomiting, and sensitivity to light and sound. Some people also experience visual disturbances called auras before the headache begins.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -613,44 +668,70 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>Known as the "oil bath," Pizhichil is one of the most luxurious and rejuvenating Ayurvedic treatments. Warm herbal oil is continuously poured over the entire body while being gently massaged into the skin. This royal treatment was traditionally reserved for the kings of Kerala for its remarkable rejuvenating effects.</p>
+                    <p>Migraine is an episodic primary headache disorder. A migraine headache is throbbing, moderate to severe  pain or pulsing sensation usually on one side of the head, that is worsened by physical activity, light, sound, smells and is associated with nausea and vomiting. Symptoms typically last for 4 hours to 72 hours and may be severe, that is the pain is disabling..</p>
                     
-                    <p>This treatment is especially beneficial for:</p>
+                    <p>Treatments</p>
                     <ul>
-                        <li>Arthritis and joint pain</li>
-                        <li>Nervous system disorders</li>
-                        <li>Muscle tension and stiffness</li>
-                        <li>Paralysis and hemiplegia</li>
-                        <li>Enhancing skin luster and texture</li>
-                        <li>Overall rejuvenation and anti-aging</li>
+                        <li>Lepam</li>
+                        <li>Virechanam</li>
+                        <li>Shiropichu</li>
+                        <li>Shirodhara</li>
+                        <li>Shirovasti</li>
+                        <li>Nasyam</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p>
+                    <!-- <h3>Procedure</h3>
+                    <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p> -->
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://media.istockphoto.com/id/1271483100/photo/dhara-ayurvedic-forehead-oil-treatment.jpg?s=612x612&w=0&k=20&c=oqBkBSvUy0-PGPmAI0aDC-ZoXYBezF10R1D92H9GcmA=" alt="Pizhichil oil preparation">
-                        <img src="https://i0.wp.com/www.ayurvedagram.com/blog/wp-content/uploads/2019/05/image5.jpg?resize=604%2C402&ssl=1" alt="Pizhichil massage technique">
-                        <img src="https://www.somatheeram.org/wp-content/uploads/2019/07/sarvangadhara-1-1.jpg" alt="Full body Pizhichil treatment">
+                        <figure>
+                            <img src="https://pbs.twimg.com/media/CpGIi0IVUAEwBcH.jpg" alt="Pizhichil oil preparation">
+                            <figcaption>Lepam : is a herbal paste made by blending specific medicinal herbs, powders.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://5.imimg.com/data5/HY/WX/AW/SELLER-89687569/shiropichu.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Shiropichu  :A specialized treatment where medicated oil is applied to the crown of the head</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://media.timeout.com/images/103526046/750/562/image.jpg" alt="Full body massage">
+                            <figcaption>Shirodhara :Relaxing full body Ayurvedic massage therapy session</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.pinimg.com/originals/92/c6/0f/92c60f704c1ef843ff9fae4ee6fa8001.png" alt="Herbal steam therapy">
+                            <figcaption>Shirovasti :is a classical Ayurvedic treatment where warm medicated oil is retained on the head.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.kairali.mu/wp-content/uploads/2020/09/Nasyam-M.jpg" alt="Nasya treatment">
+                            <figcaption>Nasya  :Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
+           
         </div>
 
         <div class="separator"></div>
 
         <!-- Njavarakizhi Treatment -->
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="sinusitis">
+            <h2 class="treatment-title">Sinusitis</h2>
+            <img src="https://www.cranio.in.ua/wp-content/uploads/2023/08/sinusit-lechenie.webp"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    Sinusitis is an inflammation or swelling of the tissue lining the sinuses, which are air-filled cavities located in the forehead, cheeks, and around the eyes. It is usually caused by a cold, allergy, or infection, leading to blocked sinuses and a buildup of mucus.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -658,28 +739,62 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Sinusitis is inflammation of the Para nasal sinus, most commonly caused by an allergy or infection. A sinusitis presents with headache, face pain, nasal discharges, stuffy nose, fever loss of smell, sore throat, nasal congestion, cough, eye pain etc.</p>
                     
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Nasyam</li>
+                        <li> Abhyanga</li>
+                        <li>Shirodhara</li>
+                        <li>Virechanam</li>
+                        <li>Shirovasti</li>
+                        <li>Shiropichu</li>
+                        <li>Thalam</li>
+                        <li>Lepam</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
                 </div>
-                
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/8Ua3mjtBeDU/maxresdefault.jpg" alt="Pizhichil oil preparation">
+                            <figcaption>Nasya  :Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.chandigarhayurvedcentre.com/wp-content/uploads/2019/09/shiroabhyangam.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Abhyanga  :Ayurvedic oil massage that relaxes, rejuvenates, and balances the body. </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/4042551/2a00000180bcb90745116ad9444908095283/XXXL" alt="Herbal steam therapy">
+                            <figcaption>Shirovasti :is a classical Ayurvedic treatment where warm medicated oil is retained on the head</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://5.imimg.com/data5/HY/WX/AW/SELLER-89687569/shiropichu.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Shiropichu - A specialized treatment where medicated oil is applied to the crown of the head</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://img2.scoop.it/IdR8CAiBoLrzs-_guFBfZzl72eJkfbmt4t8yenImKBUJVZ9CsT1ESDVST3DxBObc" alt="Shiropichu treatment">
+                            <figcaption>Thalam  :A medicated herbal paste applied on the head to cool the brain and relieve stress, insomnia, and headaches.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.clinica-tibet.ru/upload/services/acustic-massage-3.jpg" alt="Shiropichu treatment">
+                            <figcaption>Lepam : is a herbal paste made by blending specific medicinal herbs, powders.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -688,14 +803,13 @@
         <!-- Add expanded content sections for all other treatment cards following the same pattern -->
         <!-- I'll include one more example and you can follow the same pattern for the rest -->
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Pizhichil</h2>
-            <img src="https://akayurvediclinic.com/images/slider/slide01.jpg" alt="Pizhichil Treatment"
+        <div class="treatment-card" id="depression">
+            <h2 class="treatment-title">Depression</h2>
+            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/08/23/f6fe8267-63dd-4643-8be6-6e8f63ab9391_c4c9329d.jpg" alt="Pizhichil Treatment"
                 class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    The patient would be examined by the doctors and the oil to be used would be prescribed. The oil
-                    would be slightly heated. A clean cloth bundle would be kept ready.
+                    Depression is a common but serious mental health condition that affects how a person feels, thinks, and behaves. It goes beyond just feeling sad—it can cause deep feelings of hopelessness, loss of interest in activities once enjoyed, fatigue, changes in appetite or sleep, and difficulty concentrating. Depression can affect anyone, regardless of age or background, and often impacts daily life and relationships.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -703,28 +817,45 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>Known as the "oil bath," Pizhichil is one of the most luxurious and rejuvenating Ayurvedic treatments. Warm herbal oil is continuously poured over the entire body while being gently massaged into the skin. This royal treatment was traditionally reserved for the kings of Kerala for its remarkable rejuvenating effects.</p>
+                    <p>Common mental disorder that presents with depressed mood. Mind is also one among the three basic pillars of life along with body and conscious. In its holistic approach, Ayurveda gives prime importance to positive mental health. Anything that disturbs the balance of body and mind is known to produce a disease. Depressed feeling that persists and impair one’s daily life, however, may be an indication of depressive disorder.</p>
                     
                     <p>This treatment is especially beneficial for:</p>
                     <ul>
-                        <li>Arthritis and joint pain</li>
-                        <li>Nervous system disorders</li>
-                        <li>Muscle tension and stiffness</li>
-                        <li>Paralysis and hemiplegia</li>
-                        <li>Enhancing skin luster and texture</li>
-                        <li>Overall rejuvenation and anti-aging</li>
+                        <li>Virechanam</li>
+                        <li>Nasyam</li>
+                        <li>Shiroabhyanga</li>
+                        <li>Shirodhara</li>
+                        
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p>
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://media.istockphoto.com/id/1271483100/photo/dhara-ayurvedic-forehead-oil-treatment.jpg?s=612x612&w=0&k=20&c=oqBkBSvUy0-PGPmAI0aDC-ZoXYBezF10R1D92H9GcmA=" alt="Pizhichil oil preparation">
-                        <img src="https://i0.wp.com/www.ayurvedagram.com/blog/wp-content/uploads/2019/05/image5.jpg?resize=604%2C402&ssl=1" alt="Pizhichil massage technique">
-                        <img src="https://www.somatheeram.org/wp-content/uploads/2019/07/sarvangadhara-1-1.jpg" alt="Full body Pizhichil treatment">
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.kairali.mu/wp-content/uploads/2020/09/Nasyam-M.jpg" alt="Nasya treatment">
+                            <figcaption>Nasya  :Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.chandigarhayurvedcentre.com/wp-content/uploads/2019/09/shiroabhyangam.jpg" alt="Shiropichu treatment">
+                            <figcaption>Shiroabhyanga  :A soothing head massage with medicated oil to relieve stress, boost sleep, and nourish the scalp</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
@@ -736,14 +867,13 @@
         <!-- For brevity, I'm not including all of them, but you would follow the same pattern -->
 
         <!-- Example of additional treatment cards with expanded content -->
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="rheumatoid">
+            <h2 class="treatment-title">Rheumatoid Arthritis</h2>
+            <img src="{% static 'D:\IMC project\SanthiHospital\santhiproject\static\images\1.11.jpg' %}"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    Inflammatory Arthritis  in which all the major and minor joints are associated with pain and stiffness and also juvenile rheumatoid arthritis is more common in young girls which has got very bad prognosis.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -751,41 +881,56 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Small joints of fingers, toes, hands and wrist are inflamed.</p>
                     
-                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <p>Morning stiffness more than 30 minutes or much longer is seen with mild fever.  </p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Dhara</li>
+                        <li>Lepanam</li>
+                        <li>Virechanam</li>
+                        <li>Yapana Vasti</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/i?id=1296187d43bf272d876f21a4e6b431f8d8ea2fc4-5604149-images-thumbs&n=13" alt="Pizhichil oil preparation">
+                            <figcaption>Dhara  :A continuous flow of medicated liquid over the body or forehead to relax the mind, soothe the nerves, and balance the doshas.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.ayurveda.seasontwo.com/assets/img/services/treatment/januvasthi.jpg" alt="Full body massage">
+                            <figcaption>Yapana Vasti is a special type of Ayurvedic enema therapy that combines both nourishing and detoxifying effects</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="osteoarthritis">
+            <h2 class="treatment-title">Osteoarthritis</h2>
+            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/09/01/7cf76f60-588c-4688-be95-73120cf1447c_5f7768ee.jpg"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    Osteoarthritis is a joint disease where the cartilage wears down over time, causing pain, stiffness, and reduced movement, especially in the knees, hips, and hands. It’s common with aging.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -793,41 +938,61 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Knee joint Osteoarthritis is very common, develops after the age of 35, commonly seen in bus drivers, conductors, teachers, obese persons. Pain increases while working..</p>
                     
-                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Abhyanga</li>
+                        <li>Dhara</li>
+                        <li>Janu Vasti</li>
+                        <li>Janu Pichu</li>
+                        <li>Lepanam</li>
+                        <li>Matra Vasti</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                  
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://www.chandigarhayurvedcentre.com/wp-content/uploads/2019/09/shiroabhyangam.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Abhyanga  :Ayurvedic oil massage that relaxes, rejuvenates, and balances the body. </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/i?id=1296187d43bf272d876f21a4e6b431f8d8ea2fc4-5604149-images-thumbs&n=13" alt="Pizhichil oil preparation">
+                            <figcaption>Dhara  :A continuous flow of medicated liquid over the body or forehead to relax the mind, soothe the nerves, and balance the doshas.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.ayurveda.seasontwo.com/assets/img/services/treatment/januvasthi.jpg" alt="Shiropichu treatment">
+                            <figcaption>Janu Vasti is an Ayurvedic therapy where warm medicated oil is pooled over the knee joint in a dough ring.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://yoga24.info/wp-content/uploads/2019/04/shatkarma-6.jpg" alt="Full body massage">
+                            <figcaption>Janu Pichu is an Ayurvedic treatment where a cotton pad soaked in warm medicated oil is placed on the knee.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/11277832/2a00000191a28197d4fe23cba5bf32d1ccc4/XXXL" alt="Herbal steam therapy">
+                            <figcaption>Matra Vasti is a gentle Ayurvedic enema therapy using small amounts of medicated oil. It's safe for daily use</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="paralysis">
+            <h2 class="treatment-title">Paralysis</h2>
+            <img src="https://images.hub.ldpr.ru/display?path=media/images/ivanovo/4569406f59218a2638edc462033f5923f1c71f561b307252ccb3c5f5494d3f3b.jpg&op=resize&h=600"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    Paralysis is a condition where there is a loss of muscle function in one or more parts of the body. It usually happens due to damage to the nervous system, especially the spinal cord or brain, such as from a stroke, injury, or neurological disorder
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -835,41 +1000,57 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
-                    
-                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <p>Paralysis is a condition in which the muscle movements are hampered due to some damage or problem in the nervous system. It can manifest in many forms – localized or generalized, Partial or complete, temporary or permanent, spastic or flaccid. Jumping, swimming, extreme physical activities, falling during rides can cause injury to head/brain can cause paralysis.</p>
+                    <p>mall joints of fingers, toes, hands and wrist are inflamed</p>
+                    <p>Morning stiffness more than 30 minutes or much longer is seen with mild fever.  </p>
+                  
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Dhara</li>
+                        <li>Lepanam</li>
+                        <li>Virechanam</li>
+                        <li>Yapana Vasti</li>
+                       
                     </ul>
+                    <div class="whatsapp-enquiry">
+                        <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Enquire 
+                        </a>
+                    </div>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/i?id=1296187d43bf272d876f21a4e6b431f8d8ea2fc4-5604149-images-thumbs&n=13" alt="Pizhichil oil preparation">
+                            <figcaption>Dhara  :A continuous flow of medicated liquid over the body or forehead to relax the mind, soothe the nerves, and balance the doshas.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.ayurveda.seasontwo.com/assets/img/services/treatment/januvasthi.jpg" alt="Full body massage">
+                            <figcaption>Yapana Vasti is a special type of Ayurvedic enema therapy that combines both nourishing and detoxifying effects</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="Post-natal">
+            <h2 class="treatment-title">Post-natal care</h2>
+            <img src="https://cdn.uza.uz/2023/01/02/07/03/isnpjOtntgFuquBoseSV2a1tcmDPQOPC_normal.JPG"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    The post –natal period is a crucial phase for a new mother. According to Ayurveda, the first 42 days after child birth determines a woman’s long term health.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -877,41 +1058,70 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>The post –natal period is a crucial phase for a new mother. According to Ayurveda, the first 42 days after child birth determines a woman’s long term health. This period requires specialized care to help the mother recover from delivery, regain strength and restore hormonal balance. Pregnancy and child birth cause significant Vata aggravation, leading to body pain, digestive issues and emotional imbalances. If proper care is not taken, it can lead to complications like weakened immunity, hormonal imbalance and joint pain.</p>
                     
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Abhyanga + Turmeric + Grinded coconut (scrub)</li>
+                        <li>Head massage +Head pack</li>
+                        <li>Face massage +Face pack</li>
+                        <li>Vedukuli</li>
+                        <li>Dhoopanam</li>
+                        <li>Anjanam</li>
+                        <li>Udaraveshtanam</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://i-park.by/upload/medialibrary/6bd/6bd37a6cfa18f18395e6704de36b364c.jpg" alt="Pizhichil oil preparation">
+                            <figcaption>Abhyanga is a full-body Ayurvedic oil massage that nourishes the skin, improves circulation, and calms the nervous system.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                            <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://img.grouponcdn.com/deal/mLP1YrP5GAkepk5Znfu3/hb-2048x1229/v1/t4200x2520.webp" alt="Shiropichu treatment">
+                            <figcaption>Face Massage improves blood flow, tones facial muscles, and gives a natural glow.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://saatwika.in/wp-content/uploads/2022/09/Vethukuli.jpg" alt="Full body massage">
+                            <figcaption>Vedukuli is a traditional Ayurvedic treatment that involves applying warm medicated herbal bundles (kizhi) to the body</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.aumayurvedalife.com/wp-content/uploads/2019/05/Dhoopanam.jpg" alt="Herbal steam therapy">
+                            <figcaption>Dhoopanam is an Ayurvedic fumigation therapy where medicinal herbs are burned to create smoke</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://akayurvediclinic.com/images/slider/slide01.jpg" alt="Nasya treatment">
+                            <figcaption>Anjanam is an Ayurvedic eye therapy where medicated herbal paste or collyrium is applied to the eyes.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://saatwika.in/wp-content/uploads/2023/09/Abdominal-Binding-After-Delivery-in-Ayurveda.jpg" alt="Nasya treatment">
+                            <figcaption>Udaraveshtanam is an Ayurvedic treatment where a cloth soaked in herbal decoction is tied around the abdomen.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="dandruff">
+            <h2 class="treatment-title">Dandruff</h2>
+            <img src="https://static.india.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-16-at-1.09.21-PM.jpeg?impolicy=Medium_Resize&w=1200&h=800"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                    Dandruff is a common scalp condition where dead skin flakes off, often causing itching and dryness.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -919,41 +1129,54 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Dandruff is a common, non infectious disease of the scalp. It may be found even in face, ears, neck and front of the chest, eye brows. People with inherent dry skin also face this problem. Excessive intake of sour foods, Exposure to dust , excessive sweating, not washing hair regularly.</p>
                     
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Shirodhara</li>
+                        <li>Shirovasti</li>
+                        <li>Head massage</li>
+                        <li>Head pack</li>
                     </ul>
-                    
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                            <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                            <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                        </figure>
+                    <figure>
+                        <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                        <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                    </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="Hair">
+            <h2 class="treatment-title">Hair fall</h2>
+            <img src="https://img.huffingtonpost.com/asset/5b7ad084200000de0237a17b.jpeg?cache=sjqr7Vrruf"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                   Hair fall refers to the shedding or loss of hair from the scalp or other parts of the body. It can be caused by factors like stress, hormonal changes, poor nutrition, harsh hair products, or medical conditions.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -961,41 +1184,55 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Hair fall also known as hair loss is the shedding of hair from head or body, often affecting the scalp. It can be temporary or permanent and can be caused by various factors like genetics, hormonal change, medical conditions, chemicals, etc..</p>
                     
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Shiro abhyanga</li>
+                        <li>Shirodhara</li>
+                        <li>Head massage</li>
+                        <li>Head pack</li>
                     </ul>
-                    
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                 
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://www.filepicker.io/api/file/ro7xkOdSZKBVif8VDgbA" alt="Pizhichil oil preparation">
+                            <figcaption>Shiro Abhyanga is a traditional Ayurvedic head massage that involves gently massaging the scalp, neck, and shoulders using warm herbal oils</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.tez-tour.travel/img/hotels/4922/2.jpg" alt="Shiropichu treatment">
+                            <figcaption>Head massage is a soothing technique that involves gentle pressure and circular movements on the scalp, often including the neck and shoulders</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://wanderluxe.s3-ap-southeast-1.amazonaws.com/wp-content/uploads/2015/04/ayurveda_1-e1430269685420.jpg" alt="Full body massage">
+                            <figcaption>Relaxing full body Ayurvedic massage therapy session</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="stress">
+            <h2 class="treatment-title">Stress</h2>
+            <img src="https://cdn.newswire.com/files/x/65/ed/f727c2f53cc666767ad0bcb42e85.jpg"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                   Stress is the body's natural response to pressure or challenges. It can be emotional, mental, or physical, and often comes from work, relationships, or daily life struggles
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -1003,41 +1240,57 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
-                    
+                    <p>Caused due to imbalance of mind and it lowers immunity and makes the body susceptible to disease. Stress can be caused by eating unhealthy foods, following an irregular or incorrect routine and having uncontrolled mental emotions like fear, grief. </p>
+                    <p>Emotions and body organs are said to be immediately related in Ayurveda. When we repress negative emotions, they are not possessed and cannot be released, which puts stress on the organs and cause diseases. Ayurveda techniques of managing stress not only keep the body and mind in harmony, but also gradually increase the level of inner fulfillment.</p>
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Shiroabhyanga</li>
+                        <li>Shirodhara</li>
+                        <li>Shirovasti</li>
+                        <li>Shiropichu</li>
                     </ul>
                     
                     <h3>Procedure</h3>
                     <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
                 </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://www.chandigarhayurvedcentre.com/wp-content/uploads/2019/09/shiroabhyangam.jpg" alt="Shiropichu treatment">
+                            <figcaption>Shiroabhyanga  :A soothing head massage with medicated oil to relieve stress, boost sleep, and nourish the scalp</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/4042551/2a00000180bcb90745116ad9444908095283/XXXL" alt="Herbal steam therapy">
+                            <figcaption>Shirovasti :is a classical Ayurvedic treatment where warm medicated oil is retained on the head</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://5.imimg.com/data5/HY/WX/AW/SELLER-89687569/shiropichu.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Shiropichu - A specialized treatment where medicated oil is applied to the crown of the head</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
+        <div class="treatment-card" id="hypertension">
+            <h2 class="treatment-title">Hypertension</h2>
+            <img src="https://cdn131.picsart.com/328363891031211.png"
                 alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                   Hypertension, also known as high blood pressure, is a condition where the force of the blood against the artery walls is consistently too high
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -1045,41 +1298,56 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Hypertension is rarely accompanied by any symptoms. It is reported with headache, vertigo, light headness, epistaxis, sweating, excessive palpitation, tinnitus, altered vision or Ayurvedic cleansing treatments are a must in throwing away the unnecessary morbid Dosha’s and mala’s from the system so as to re-establish the heart and cure hypertension and cardiac disorder.</p>
                     
                     <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
-                        <li>Neurological disorders like paralysis</li>
-                        <li>Muscle wasting and weakness</li>
-                        <li>Joint pain and inflammation</li>
-                        <li>Improving blood circulation</li>
-                        <li>Rejuvenating the body tissues</li>
-                        <li>Strengthening the nervous system</li>
+                        <li>Virechana</li>
+                        <li>Shirodhara</li>
+                        <li>Head massage + Head pack</li>
+                        <li>Thalam</li>
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                            <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://img2.scoop.it/IdR8CAiBoLrzs-_guFBfZzl72eJkfbmt4t8yenImKBUJVZ9CsT1ESDVST3DxBObc" alt="Shiropichu treatment">
+                            <figcaption>Thalam  :A medicated herbal paste applied on the head to cool the brain and relieve stress, insomnia, and headaches.</figcaption>
+                        </figure>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="treatment-card">
-            <h2 class="treatment-title">Njavarakzhi</h2>
-            <img src="https://sun9-15.userapi.com/impg/Z25znngGoYtz_onzXZajCIP_BnsfeRUIKvzn4w/ZTypWpRHA6Q.jpg?size=1071x763&quality=96&sign=38ca8501bb4c84d849b9634e697eff85&c_uniq_tag=OAwihyz0EntTGlgRWEbZso9chFHnjHdukOQvT_ZjaN8&type=album"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+        <div class="treatment-card" id="Prameha">
+            <h2 class="treatment-title">Prameha</h2>
+            <img src="{% static 'images/Diabetes_Mellitus[1].jpg' %}" alt="Njavarakzhi Treatment" class="treatment-image">
+
             <div class="treatment-content">
                 <p class="treatment-description">
-                    In this treatment process medicated rice (Njavara rice) in the form of boluses tied in muslin bags
-                    are applied externally.
+                   Prameha is an Ayurvedic term used to describe a group of urinary disorders, most commonly linked with diabetes.
                 </p>
                 <a href="#" class="more-btn">more...</a>
             </div>
@@ -1087,9 +1355,14 @@
             <div class="expanded-content" style="display: none;">
                 <div class="expanded-description">
                     <h3>Treatment Details</h3>
-                    <p>In this traditional Ayurvedic treatment, Njavara rice (a medicinal variety of rice) is cooked in milk decoction with herbs, then placed in muslin cloth bags. These boluses are dipped in warm herbal oil or milk and applied all over the body with a special rhythmic massage technique.</p>
+                    <p>Frequent urge to pass urine which may be excessive or scanty.</p>
+                    <p>Usually blood sugar levels are 3.5 to 6.50ml</p>
+                    <p>Diabetes cannot be cured. Keeping the level of sugar in the blood within its normal range can however control it.</p>
+                    <p>The treatment and management of diabetes varies from patient to patient.</p>
+                    <p>Patient with Type 1 diabetes does not produce insulin. Insulin can only be given through injections. These injections may need to be given several times a day</p>
+                    <p>Patient with Type 2 diabetes may not need insulin. Sometimes oral medications are also prescribed. In some cases of Type 2 diabetes, insulin may also be requires.</p>
                     
-                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <!-- <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
                     <ul>
                         <li>Neurological disorders like paralysis</li>
                         <li>Muscle wasting and weakness</li>
@@ -1097,23 +1370,604 @@
                         <li>Improving blood circulation</li>
                         <li>Rejuvenating the body tissues</li>
                         <li>Strengthening the nervous system</li>
+                    </ul> -->
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <!-- <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://pbs.twimg.com/media/CpGIi0IVUAEwBcH.jpg" alt="Pizhichil oil preparation">
+                            <figcaption>Pizhichil oil preparation - Traditional medicated oils being prepared for treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://5.imimg.com/data5/HY/WX/AW/SELLER-89687569/shiropichu.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Shiropichu - A specialized treatment where medicated oil is applied to the crown of the head</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://media.timeout.com/images/103526046/750/562/image.jpg" alt="Full body massage">
+                            <figcaption>Relaxing full body Ayurvedic massage therapy session</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.pinimg.com/originals/92/c6/0f/92c60f704c1ef843ff9fae4ee6fa8001.png" alt="Herbal steam therapy">
+                            <figcaption>Herbal steam therapy (Swedana) - An important detoxification process</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.kairali.mu/wp-content/uploads/2020/09/Nasyam-M.jpg" alt="Nasya treatment">
+                            <figcaption>Nasya - Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="treatment-card" id="cholesterol">
+            <h2 class="treatment-title">Cholesterol (Hyper cholesterolemia)</h2>
+            <img src="{% static 'D:\IMC project\SanthiHospital\santhiproject\static\images\col_page-0001 (1).jpg ' %}"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Cholesterol (Hypercholesterolemia) is a condition where there’s too much cholesterol (a type of fat) in the blood.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Fat is an essential component of our body. It is an essential body building element, but anything in excess leads to bad to health. It will cause imbalance in the immune system. It is obtained from foods that comes from animals including egg yolks, meat, fish and dairy products. Cholesterol is carried throughout the body of 2 kinds of Lipoproteins.</p>
+                    <p>They are LDL (Low Density Lipoproteins) and HDL (High Density Lipoproteins). For good health, it is important that the body has healthy levels of lipoproteins.</p>
+                    
+                    <p>Lipoproteins are classified as,</p>
+
+                    <ul>
+                        <li>VLDL ->Very low density lipoproteins</li>
+                        <li>LDL   ->Low density lipoproteins</li>
+                        <li>IDL    ->Intermediate density lipoproteins</li>
+                        <li>HDL  ->High density lipoproteins</li>
+                        <li>LDL cholesterol is bad cholesterol</li>
+                        <li>HDL cholesterol is Good cholesterol</li>
+                        
                     </ul>
                     
-                    <h3>Procedure</h3>
-                    <p>Before treatment, the Njavara rice is prepared through a special cooking process with milk and herbs according to traditional methods. The patient lies on a wooden massage table while two therapists simultaneously massage the body using the prepared rice boluses. The treatment usually requires a course of 7-14 days for optimal benefits.</p>
+                    
+                </div>
+                <div>
+                    <h4>Treatments</h4>
+                    <ul>
+                        <li>Virechana</li>
+                        <li>Vasti</li>
+                        <li>Abhyangam</li>
+                    </ul>
+                    <p>Medicines should be prescribed according to according to the range value of Cholesterol levels</p>
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
                 </div>
                 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
-                        <img src="https://cdn.cdnparenting.com/articles/2019/03/19131027/1152001218-H.jpg" alt="Njavarakizhi preparation">
-                        <img src="https://www.ayurcentre.in/blog/wp-content/uploads/2021/03/Navarakkizhi-1024x682.jpg" alt="Njavarakizhi application">
-                        <img src="https://c8.alamy.com/comp/2D7YFK5/traditional-ayurvedic-njavara-kizhi-massage-by-two-therapists-2D7YFK5.jpg" alt="Njavarakizhi massage technique">
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.ayurveda.seasontwo.com/assets/img/services/treatment/januvasthi.jpg" alt="Full body massage">
+                            <figcaption> Vasti is a special type of Ayurvedic enema therapy that combines both nourishing and detoxifying effects</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="neck">
+            <h2 class="treatment-title">NECK PAIN (Cervical spondylosis)</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=2842f1e7acd2f0c5da514bc95084c531cf4e7f3a-5578976-images-thumbs&n=13"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Neck Pain (Cervical Spondylosis) is a condition caused by age-related wear and tear of the cervical spine
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>The discs and Vertebrae in the neck degenerate and has pulling pressure on the spinal cord in the neck Commonly seen in 30 years of age. </p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li> Abhyangam</li>
+                        <li>Nasyam</li>
+                        <li>Giriva pichu</li>
+                        <li>Grriva vasti</li>
+                        <li>Lepanam</li>
+                        <li>Thalam</li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://drprem.com/wellness/wp-content/uploads/sites/7/2021/01/Ayurveda-is-3000-year-old-traditional-Indian-healing-practice.jpg" alt="Full body massage">
+                            <figcaption>Abhyangam is a traditional Ayurvedic full-body oil massage that uses warm herbal oils tailored to your dosha (body type).</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.kairali.mu/wp-content/uploads/2020/09/Nasyam-M.jpg" alt="Nasya treatment">
+                            <figcaption>Nasya - Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://images.squarespace-cdn.com/content/v1/5fa5c946b3f20966e04733c6/1614286101461-ZC6GB90MELKI0U2MV28V/Greevavasthi_1600x.jpg?format=2500w" alt="Pizhichil massage technique">
+                            <figcaption>Greeva Pichu is a soothing Ayurvedic treatment focused on the neck region (Greeva means neck in Sanskrit).</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/11277832/2a00000191a28197d4fe23cba5bf32d1ccc4/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Greeva Vasti is a classical Ayurvedic therapy where warm medicated oil is retained over the neck area using a dough ring made of black gram flour..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        <figure>
+                        <figure>
+                            <img src="https://img2.scoop.it/IdR8CAiBoLrzs-_guFBfZzl72eJkfbmt4t8yenImKBUJVZ9CsT1ESDVST3DxBObc" alt="Shiropichu treatment">
+                            <figcaption>Thalam  :A medicated herbal paste applied on the head to cool the brain and relieve stress, insomnia, and headaches.</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="shoulder">
+            <h2 class="treatment-title">SHOULDER PAIN (Frozen shoulder)</h2>
+            <img src="https://rostfit.ru/upload/images/training/323-1.jpg"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Shoulder Pain (Frozen Shoulder), also known as Adhesive Capsulitis, is a condition where the shoulder becomes stiff, painful, and loses its range of motion
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Frozen shoulder is when the shoulder is painful and cannot move normally because of inflammation It causes due to the after effect of injury, diabetes etc. </p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Nasyam</li>
+                        <li>Abhyangam </li>
+                        <li>Dhara</li>
+                        <li>podikizhi/ Elakishi</li>
+                        <li>Lepanam</li>
+                        <li>Exercise</li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://www.kairali.mu/wp-content/uploads/2020/09/Nasyam-M.jpg" alt="Nasya treatment">
+                            <figcaption>Nasya - Therapeutic nasal administration of medicinal oils</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://drprem.com/wellness/wp-content/uploads/sites/7/2021/01/Ayurveda-is-3000-year-old-traditional-Indian-healing-practice.jpg" alt="Full body massage">
+                            <figcaption>Abhyangam is a traditional Ayurvedic full-body oil massage that uses warm herbal oils tailored to your dosha (body type).</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9709178/2a0000018920db07cf831887c6ca9b900019/XXXL" alt="Pizhichil oil preparation">
+                            <figcaption>Podikizhi and Elakizhi are traditional Ayurvedic therapies where herbal powders or fresh medicinal leaves are tied in cloth bundles, heated, and gently massaged over the body.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="low-back">
+            <h2 class="treatment-title">LOW BACK PAIN (Lumbar spondylosis).</h2>
+            <img src="https://gdb.rferl.org/2331F05C-D982-4E9E-9F4E-6D93473AB1DE_w1200_r1.jpg"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Low Back Pain (Lumbar Spondylosis) is a degenerative condition affecting the lower spine, often caused by aging, poor posture, or prolonged sitting.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>A disease with pain in Lumbar region usually back pain originates from the nerves, muscles, bones, and joints.</p>
+                    <p>Symptoms includes, Unable to stand straight without having muscle spasm or pain in the lower back, sharp localized pain in neck middle and lower back especially when engaging in strenuous activity.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Virechanam</li>
+                        <li>Abhyangam + steam</li>
+                        <li>Abhyangam + podikizi</li>
+                        <li>Kati vasti</li>
+                        <li>Bandage</li>
+                        <li>Avagaham</li>
+                        <li>Matera Vasti</li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://th-i.thgim.com/public/migration_catalog/article15012521.ece/alternates/FREE_1200/06smsoukya2.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Abhyangam with Podikizhi is a powerful Ayurvedic combination therapy where a soothing full-body oil massage is followed by the application of warm herbal powder boluses.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/rYB0qaQiKxA/maxresdefault.jpg" alt="Shiropichu treatment">
+                            <figcaption>Kati Vasti is a specialized Ayurvedic therapy where warm medicated oil is retained over the lower back within a dough ring.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/2c/19/24/a8/avagaham-treatment.jpg" alt="Shiropichu treatment">
+                            <figcaption>Avagaham is a traditional Ayurvedic sitz bath therapy where the body is immersed in warm, medicated herbal decoctions.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://miro.medium.com/v2/resize:fit:700/1*dvYWSnw-BW0D7LLLkqDUgA.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Matra Vasti is a gentle Ayurvedic enema therapy using a small quantity of medicated oil administered through the rectum.</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="Sciatica">
+            <h2 class="treatment-title">SCIATICA</h2>
+            <img src="https://ak.picdn.net/shutterstock/videos/1110146821/thumb/1.jpg"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Sciatica is a condition caused by irritation or compression of the sciatic nerve, leading to sharp or radiating pain from the lower back down to the legs.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Severe painful condition where sciatic nerve of one or both legs are involved. prolonged sitting is a common condition. which affects the movements of the legs .and the condition where back pain and radiation pain together of the legs are found together.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Abhyangam + steam</li>
+                        <li> podikishi</li>
+                        <li>Lepanam</li>
+                        <li>Matra vasti</li>
+                        <li>Kati vasti.</li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://th-i.thgim.com/public/migration_catalog/article15012521.ece/alternates/FREE_1200/06smsoukya2.jpg" alt="Shiropichu treatment">
+                            <figcaption>Podikizhi is a rejuvenating Ayurvedic therapy where warm herbal powders are tied in cloth bundles and gently massaged over the body.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://miro.medium.com/v2/resize:fit:700/1*dvYWSnw-BW0D7LLLkqDUgA.jpeg" alt="Shiropichu treatment">
+                            <figcaption>Matra Vasti is a gentle Ayurvedic enema therapy using a small quantity of medicated oil administered through the rectum.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/rYB0qaQiKxA/maxresdefault.jpg" alt="Shiropichu treatment">
+                            <figcaption>Kati Vasti is a specialized Ayurvedic therapy where warm medicated oil is retained over the lower back within a dough ring.</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="thyroid">
+            <h2 class="treatment-title">Thyroid</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=1e9b4d6ca0e1ae32700c09ff97dd3c2f6112af74-5668913-images-thumbs&n=13"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Thyroid disorders, such as hypothyroidism and hyperthyroidism, occur due to imbalances in the thyroid gland's hormone production
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>hypothyroidism is caused due to low thyroid hormones in the blood. This happens because the thyroid glands do not produce sufficient thyroid hormones. It leads to heart problems, Obesity etc.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>It should be treated according to the symptoms of the disease.</li>
+                       
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <!-- <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/9331640/2a00000188c926c7fcb9e98fa1e4a8f37e2d/XXXL" alt="Shiropichu treatment">
+                            <figcaption>Shirodhara  :A steady stream of warm oil poured on the forehead to calm the mind and relieve stress.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/get-altay/6319069/2a00000182a7c4696f551ba186307d2ee73b/XXL_height" alt="Pizhichil massage technique">
+                            <figcaption>Head Massage with medicated oil relaxes the mind, improves blood flow, and promotes hair growth</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://img2.scoop.it/IdR8CAiBoLrzs-_guFBfZzl72eJkfbmt4t8yenImKBUJVZ9CsT1ESDVST3DxBObc" alt="Shiropichu treatment">
+                            <figcaption>Thalam  :A medicated herbal paste applied on the head to cool the brain and relieve stress, insomnia, and headaches.</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="treatment-card" id="Varicose">
+            <h2 class="treatment-title">Varicose Veins</h2>
+            <img src="https://ak.picdn.net/shutterstock/videos/1110969089/thumb/8.jpg"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Varicose Veins are swollen, twisted veins usually appearing in the legs due to poor blood circulation and weakened vein valves.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Enlarged vein in the legs, due to weakness of walls of superficial veins.</p>
+                    <p>It occurs due to pregnancy and after child birth.</p>
+                    <p>it develops as spider veins which are enlarged</p>
+                    <p>Sometimes pain and itching was present</p>
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Abhyangam + steam</li>
+                        <li>Siravyadha</li>
+                        <li>Jaloukavacharana</li>
+                       
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.chandigarhayurvedcentre.com/wp-content/uploads/2021/04/SIRAVYADHA-VIDHI.jpg" alt="Shiropichu treatment">
+                            <figcaption>Siravyadha is an ancient Ayurvedic bloodletting procedure that involves controlled removal of impure blood from specific veins.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://pr5.zoon.ru/euDOKcJgKPZDbKHmoQfBpw/1200x800,q85/5Xe9PvMyzs2_tvcL5pHjh2uDP-eReoY_FJ7NhcvXos0gxc5UHjiXZuh_lq2LCwCzyJnrK9Xqeg7vUlWrUj7ni_zi7xeXVxCMPiM6rJs8Wyxprj5gmg7VN9EQSlnoMQew" alt="Pizhichil massage technique">
+                            <figcaption>Jaloukavacharana is an Ayurvedic leech therapy where medicinal leeches are applied to draw out impure blood.</figcaption>
+                        </figure>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="treatment-card" id="Gout">
+            <h2 class="treatment-title">Gout</h2>
+            <img src="https://avatars.mds.yandex.net/i?id=35e1cb680c565bbbbf52292b5c00cb6738476f66-9694985-images-thumbs&n=13"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Gout is a form of arthritis caused by excess uric acid in the blood, leading to sudden, severe pain, swelling, and redness in the joints—especially the big toe
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Deposit of sodium urate crystals in the joint associated with high blood levels of uric acid common in men and women, both ankles and knees are affected, usually the joint will be warm in nature Some foods, nuts, increases Uric acid levels Sometimes severe pain is present at night.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Lepanam</li>
+                        <li>Dhara</li>
+                        <li>Abhyangam</li>
+                        <li> Virechanam</li>
+                        <li>Yapana Vasti</li>
+                    </ul>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://i.ytimg.com/vi/SSnNCQEQ7W4/maxresdefault.jpg" alt="Pizhichil massage technique">
+                            <figcaption>Lepanam is an Ayurvedic therapy where herbal paste is applied to the body to relieve pain,</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/i?id=1296187d43bf272d876f21a4e6b431f8d8ea2fc4-5604149-images-thumbs&n=13" alt="Pizhichil oil preparation">
+                            <figcaption>Dhara  :A continuous flow of medicated liquid over the body or forehead to relax the mind, soothe the nerves, and balance the doshas.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.ayurveda.seasontwo.com/assets/img/services/treatment/januvasthi.jpg" alt="Full body massage">
+                            <figcaption>Yapana Vasti is a special type of Ayurvedic enema therapy that combines both nourishing and detoxifying effects</figcaption>
+                        </figure>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="treatment-card" id="pcod">
+            <h2 class="treatment-title">PCOD</h2>
+            <img src="{% static 'D:\IMC project\SanthiHospital\santhiproject\static\images\pcod.jpg' %}"
+                alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Polycystic Ovarian Disease (PCOD) is a hormonal disorder where multiple cysts form in the ovaries, causing irregular periods, weight gain, acne, hair fall, and fertility issues.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Polycystic Ovarian disease is a condition in women whereas the ovaries produce immature eggs, which may develop into cysts.  It is one of the cause of infertility in women, and also weight gain Irregular bleeding, Type 2 diabetes mellitus and cholesterol.</p>
+                    
+                    <p>The treatment lasts about 45-60 minutes and is highly effective for:</p>
+                    <ul>
+                        <li>Abhyangam </li>
+                        <li>Vamana</li>
+                        <li>Virechana</li>
+                        <li> Vasti</li>
+                    </ul>
+                    <p>Internal medications will be given to the patient according to conditions.</p>
+                    
+                    
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER_HERE" class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire 
+                    </a>
+                </div>
+                
+                <div class="expanded-images">
+                    <h3>Treatment Gallery</h3>
+                    <div class="image-gallery">
+                        <figure>
+                            <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Shiropichu treatment">
+                            <figcaption>Abhyangam with Steam is a deeply relaxing Ayurvedic therapy that begins with a full-body massage using warm medicated oils to nourish the skin, muscles, and joints..</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://avatars.mds.yandex.net/i?id=6601475ebb42e64071290134de048803_l-5173410-images-thumbs&ref=rim&n=13&w=1200&h=800" alt="Pizhichil oil preparation">
+                            <figcaption>Vaman is a therapeutic vomiting procedure in Ayurveda, part of Panchakarma, aimed at expelling excess Kapha dosha from the body</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://www.belmarrahealth.com/wp-content/uploads/2022/07/Fiber-and-Cholesterol.jpg" alt="Full body massage">
+                            <figcaption>Virechanam :Therapist preparing special herbs and ingredients for Ayurvedic treatment</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://yoga24.info/wp-content/uploads/2019/04/shatkarma-6.jpg" alt="Full body massage">
+                            <figcaption>Vasti is one of the most powerful Panchakarma therapies in Ayurveda, involving the administration of medicated oils or decoctions through the rectum</figcaption>
+                        </figure>
+                        
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <script>
         // JavaScript for the slideshow functionality
@@ -1176,6 +2030,9 @@
                     expandedContent.style.display = 'block';
                     expandedContent.classList.add('active');
                     this.textContent = 'less...'; // Change button text
+                    
+                    // Smooth scroll to expanded content
+                    expandedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
                     expandedContent.classList.remove('active');
                     this.textContent = 'more...'; // Restore button text
@@ -1187,6 +2044,27 @@
                 }
             });
         });
+
+
+        //load id first
+        document.addEventListener('DOMContentLoaded', function() {
+    // Check if there's a hash in the URL
+    if (window.location.hash) {
+        // Get the target element
+        const targetElement = document.querySelector(window.location.hash);
+        
+        // If the element exists, scroll to it
+        if (targetElement) {
+            // Small delay to ensure everything is loaded
+            setTimeout(function() {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        }
+    }
+});
     </script>
 </body>
 

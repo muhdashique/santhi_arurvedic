@@ -11,19 +11,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>Ayurveda Treatment Banner</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+        
         body {
             background-color: #f8f5f1;
             color: #333;
-            line-height: 1.6;
+            /* line-height: 1.6; */
             overflow-x: hidden;
         }
 
@@ -89,18 +88,18 @@
         }
 
         h1 {
-            font-size: 3.5rem;
+            /* font-size: 3.5rem;
             margin-bottom: 20px;
             font-weight: 300;
             letter-spacing: 3px;
-            text-transform: uppercase;
+            text-transform: uppercase; */
         }
 
         p {
             font-size: 1.3rem;
             max-width: 800px;
             margin-bottom: 30px;
-            line-height: 1.8;
+            /* line-height: 1.8; */
         }
 
         .banner-btn {
@@ -113,12 +112,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            /* letter-spacing: 1px; */
             z-index: 2;
         }
 
         .banner-btn:hover {
-            background-color: #3a5d4a;
+            background-color: #019141;
             transform: translateY(-3px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
@@ -165,7 +164,7 @@
 
         .description {
             margin-bottom: 30px;
-            line-height: 1.6;
+            /* line-height: 1.6; */
         }
 
         .packages-section {
@@ -464,6 +463,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border-radius: 20px;
         }
 
         .image-wrapper {
@@ -475,6 +475,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 20px;
         }
 
         h1 {
@@ -526,6 +527,7 @@
             flex-wrap: wrap;
             align-items: center;
             color: white;
+            border-radius: 20px;
         }
 
         .image-grid {
@@ -596,6 +598,7 @@
             min-height: 420px;
             width: 100%;
             overflow: hidden;
+            border-radius: 20px;
         }
 
         .image-container {
@@ -608,6 +611,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+            border-radius: 20px;
         }
 
         .image-container::before {
@@ -655,6 +659,135 @@
                 text-align: center;
             }
         }
+
+        /* team section */
+    
+
+.team-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.team-header h1 {
+    font-size: 48px;
+    color: #4b164f;
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.team-header::before,
+.team-header::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 20'%3E%3Cpath d='M1,10 Q10,5 20,10 T40,10' stroke='%2381c281' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.team-header::before {
+    margin-right: 10px;
+}
+
+.team-header::after {
+    margin-left: 10px;
+    transform: scaleX(-1);
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    margin: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-img {
+    width: 200px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.credentials {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.bio {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #6b8e23;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #6b8e23;
+    color: white;
+}
+
+.social-icon {
+    font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+    .team-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-card {
+        width: 280px;
+    }
+}
     </style>
 </head>
 
@@ -713,9 +846,9 @@
 
 
 
-    <section class="hero-section" style="margin-top: 30px;">
-        <div class="content-wrapper">
-            <h1>Healing Naturally, Caring Compassionately</h1>
+    <section class="" style="margin-top: 30px;">
+        <div class="px-2">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl">Healing Naturally, Caring Compassionately</h1>
             <p>Santhi Ayurveda Hospital is a holistic approach that integrates the mind, body, and spirit in all aspects
                 of patient care. We believe that every individual has his or her own constitution, and it is ours to
                 help everyone achieve their maximum health potential</p>
@@ -734,7 +867,7 @@
         <div class="image-grid">
             <div class="image-container">
                 <img class="ayurvedic-image"
-                    src="https://www.svoiludi.ru/images/tb/11819/kalari-rasayana-hotel-14094799268594_w990h700.jpg"
+                    src="https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg"
                     alt="Spa setup with essential oils, towels, and flowers">
             </div>
             <div class="image-container">
@@ -752,9 +885,10 @@
                     alt="Massage oils and towels">
             </div>
         </div>
+        
 
         <div class="content">
-            <h1 style="margin-top: 100px;">Ayurvedic Treatments: Revitalizing Life, Naturally</h1>
+            <h1 class="pt-10 text-3xl md:text-4xl lg:text-5xl">Ayurvedic Treatments: Revitalizing Life, Naturally</h1>
             <p>Step into the world of Ayurveda, where ancient therapies harmonize with modern life to bring lasting
                 wellness. From easing chronic ailments to rejuvenating your body and mind, Ayurvedic treatments are
                 rooted in balance and holistic healing. Discover the transformative effects of natural remedies and
@@ -773,8 +907,17 @@
             <img src="https://cs4.pikabu.ru/post_img/2016/01/04/5/145188744480777441.jpg"
                 alt="Ayurvedic Specialist Team at Abhaya Ayurveda Hospital">
         </div>
+        <style>
+            @media (max-width: 768px) {
+                .titleorg{
+                    font-size: 28px;
+                    font-weight: 700;
+                }
+  
+            }
+        </style>
         <div class="content-container">
-            <h2 class="title" style="color: black;">Professional Ayurvedic Specialist</h2>
+            <h2 class="title titleorg" style="color: black;">Professional Ayurvedic Specialist</h2>
             <p class="description">
                 Our Ayurvedic treatments, based on the concept that our body is a microcosm of the
                 universe, have, at the Abhaya Ayurveda Hospital, always taken into account that the
@@ -789,6 +932,117 @@
         </div>
     </section>
 
+    <div class="team-header" style="margin-top: 50px;">
+        <h1>Our Team</h1>
+    </div>
+    
+    <div class="team-container">
+    
+        <div class="team-card">
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_kzlh3Vx6iTeQtFhcgsZc9jaEUn8t0kgSlocldFe9SJsg=s900-c-k-c0x00ffffff-no-rj" alt="Dr. kumar" class="profile-img">
+            <h2 class="name">Dr. Kumar</h2>
+            <p class="credentials">BAM, MD (Ay), MA Psychology, PhD Psychology</p>
+            <p class="bio">With 27 years of experience, Dr kumar has served in government service as a district medical officer. He brings a wealth of expertise to our center, ensuring comprehensive and well-rounded care.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f social-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+                <a href="#"><i class="fab fa-youtube social-icon"></i></a>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://static.tildacdn.com/tild3062-3036-4535-a137-653432663532/Obschaya_vrachebnay_.jpg" alt="Dr. Anjali" class="profile-img">
+            <h2 class="name">Dr Anjali</h2>
+            <p class="credentials">BAMS, Diploma in Yoga and Cosmetology</p>
+            <p class="bio">With a tenure since 1987, Dr Anjali is a dedicated medical officer at Kottakkal Ayurvedic Hospital. Her commitment to holistic healing and diverse expertise makes her an invaluable asset.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f social-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+            </div>
+        </div>
+        
+        <!-- Dr Jenwin Vinod Babu -->
+        <div class="team-card">
+            <img src="https://i.pinimg.com/originals/42/92/ec/4292ecde793d03aa202818b7b3c3fb87.jpg" alt="Dr Jestin" class="profile-img">
+            <h2 class="name">Dr Jestin</h2>
+            <p class="credentials">MBBS, MS Surgery</p>
+            <p class="bio">Dr Jestin brings a modern medical perspective to our team, with two years of experience in Govt Medical College, Wayanad. His integration of contemporary and traditional practices enhances our approach to healthcare.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f social-icon"></i></a>
+                <a href="#"><i class="fab fa-instagram social-icon"></i></a>
+            </div>
+        </div>
+    </div>
+
+<!-- Improved nav menu with transition effects -->
+<ul class="nav-menu hidden lg:flex lg:static absolute top-full left-0 w-full bg-black lg:bg-transparent lg:flex-row flex-col items-center z-[999] shadow-lg lg:shadow-none transition-all duration-300 ease-in-out">
+    <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+    <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About Us</a></li>
+    <li><a href="{% url 'gallery' %}" class="{% if request.path == '/gallery/' %}active{% endif %}">Gallery</a></li>
+    <li><a href="{% url 'treatment' %}" class="{% if request.path == '/treatment/' %}active{% endif %}">Treatments</a></li>
+    <li><a href="{% url 'facilities' %}" class="{% if request.path == '/facilities/' %}active{% endif %}">Facilities</a></li>
+</ul>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbarorg');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with improved animations
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.classList.toggle('active');
+
+                // Toggle icon between bars and times with animation
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuBtn.contains(event.target) && !navMenu.contains(event.target) && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking on a menu item
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+    });
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Navbar scroll effect
