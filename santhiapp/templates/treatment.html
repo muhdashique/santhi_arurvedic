@@ -811,6 +811,14 @@
                 font-size: 90%;
             }
         }
+
+
+        .divider {
+            width: 50%;
+            height: 1px;
+            background-color: #7c9c4a;
+            margin: 30px auto;
+        }
     </style>
 
 
@@ -905,7 +913,7 @@
 
     </div>
 
-
+    <div class="divider"></div>
 
     <!-- treatment slider section  -->
     <div class="container">
@@ -923,12 +931,11 @@
                     <h3 class="card-title">Low Back Ache</h3>
                     <p class="card-description">Oral medication and treatments for a sudden or gradual onset of low back
                         ache.</p>
-                    <a href="#" class="read-more">Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                     </a>
                 </div>
 
@@ -943,12 +950,11 @@
                     </div>
                     <h3 class="card-title">Obesity</h3>
                     <p class="card-description">Ayurvedic treatments for obesity based on root causes and lifestyle.</p>
-                    <a href="#" class="read-more">Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                     </a>
                 </div>
 
@@ -962,12 +968,11 @@
                     </div>
                     <h3 class="card-title">Diabetes</h3>
                     <p class="card-description">Treatments to improve metabolism and maintain glucose levels.</p>
-                    <a href="#" class="read-more">Read More
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                     </a>
                 </div>
 
@@ -984,7 +989,7 @@
     </div>
 
 
-
+    <div class="divider"></div>
 
     <!-- treatment section -->
     <div class="contact-header">
@@ -994,10 +999,29 @@
     <div class="container">
 
         <!-- Treatment Section 1: Panchakarma -->
+        <div class="treatment-section reverse">
+            <div class="treatment-image">
+                <img src="{% static 'images\517c1db70ff3af5b5ec9d06909a42bdf.jpeg' %}" alt="Psoriasis treatment">
+            </div>
+            <div class="treatment-details">
+                <h2>Psoriasis</h2>
+                <p>Psoriasis is a long-term skin condition that causes red, scaly patches on the skin. It happens when
+                    the skin cells build up too quickly. These patches are often itchy, dry, and can appear on the
+                    scalp, elbows, knees, and back. Psoriasis is not contagious, but it may come and go over time. It
+                    can be managed with proper treatment, lifestyle changes, and skin care..</p>
+                <a href="{% url 'advtreatment' %}#Psoriasis" style="text-decoration: none;">
+                    <button
+                        style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        View
+                    </button>
+                </a>
+            </div>
+
+        </div>
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://avatars.mds.yandex.net/i?id=01bba6c09578760ee672a6c1545282af3c50042a-10471586-images-thumbs&n=13"
-                    alt="Panchakarma treatment">
+                    alt="Migraine treatment">
             </div>
             <div class="treatment-details">
                 <h2>Migraine</h2>
@@ -1022,7 +1046,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://lakefrontfamilydentistry.com/images/can-sinus-infection-cause-tooth-pain.jpg"
-                    alt="Swedanam treatment">
+                    alt="Sinusitis treatment">
             </div>
             <div class="treatment-details">
                 <h2>Sinusitis</h2>
@@ -1045,7 +1069,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://avatars.mds.yandex.net/i?id=04f53167029888971b90d8976a9395c3cd807c87-5234848-images-thumbs&n=13"
-                    alt="Abhyangam treatment">
+                    alt="Depression treatment">
             </div>
             <div class="treatment-details">
                 <h2>Depression</h2>
@@ -1068,7 +1092,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://files.medelement.com/uploads/co/33581381815050/miniature/53fdb0fa536d3cf7d9bd719e4fadc3a2.jpg"
-                    alt="Swedanam treatment">
+                    alt="Rheumatoid Arthritis treatment">
             </div>
             <div class="treatment-details">
                 <h2>Rheumatoid Arthritis</h2>
@@ -1092,7 +1116,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://avatars.mds.yandex.net/i?id=f1a7b2ce5bdc1ea398a629aaf344d1e5082ec052-5228381-images-thumbs&n=13"
-                    alt="Abhyangam treatment">
+                    alt="Osteoarthritis treatment">
             </div>
             <div class="treatment-details">
                 <h2>Osteoarthritis</h2>
@@ -1117,7 +1141,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://avatars.mds.yandex.net/i?id=8dfe7d52540e98f92ceff10edd7c4dcc19034ad9-12639726-images-thumbs&n=13"
-                    alt="Swedanam treatment">
+                    alt="Paralysis treatment">
             </div>
             <div class="treatment-details">
                 <h2>Paralysis</h2>
@@ -1141,7 +1165,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://cdn.uza.uz/2023/01/02/07/03/isnpjOtntgFuquBoseSV2a1tcmDPQOPC_normal.JPG"
-                    alt="Abhyangam treatment">
+                    alt="Post-natal care treatment">
             </div>
             <div class="treatment-details">
                 <h2>Post-natal care</h2>
@@ -1163,7 +1187,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://static.india.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-16-at-1.09.21-PM.jpeg?impolicy=Medium_Resize&w=1200&h=800"
-                    alt="Swedanam treatment">
+                    alt="Dandruff treatment">
             </div>
             <div class="treatment-details">
                 <h2>Dandruff</h2>
@@ -1187,7 +1211,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://img.huffingtonpost.com/asset/5b7ad084200000de0237a17b.jpeg?cache=sjqr7Vrruf"
-                    alt="Abhyangam treatment">
+                    alt="Hair fall treatment">
             </div>
             <div class="treatment-details">
                 <h2>Hair fall</h2>
@@ -1212,8 +1236,7 @@
 
         <div class="treatment-section reverse">
             <div class="treatment-image">
-                <img src="https://cdn.mos.cms.futurecdn.net/LmJzwk9KhCnakKypbzuJte-1200-80.jpg"
-                    alt="Swedanam treatment">
+                <img src="https://cdn.mos.cms.futurecdn.net/LmJzwk9KhCnakKypbzuJte-1200-80.jpg" alt="Stress treatment">
             </div>
             <div class="treatment-details">
                 <h2>Stress</h2>
@@ -1238,8 +1261,8 @@
 
         <div class="treatment-section">
             <div class="treatment-image">
-                <img src="https://www.mja.com.au/sites/default/files/2021-12/hypertension.jpg"
-                    alt="Abhyangam treatment">
+                <img src="https://cdn.budzdorov.ru/media/wysiwyg/shutterstock_1192949827.jpg"
+                    alt="Hypertension treatment">
             </div>
             <div class="treatment-details">
                 <h2>Hypertension</h2>
@@ -1266,7 +1289,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://images.news18.com/malayalam/uploads/2022/08/diabetes-16619388383x2.jpg"
-                    alt="Swedanam treatment">
+                    alt="Prameha treatment">
             </div>
             <div class="treatment-details">
                 <h2>Prameha</h2>
@@ -1291,7 +1314,7 @@
 
         <div class="treatment-section">
             <div class="treatment-image">
-                <img src="{% static 'images\136.webp' %}" alt="Abhyangam treatment">
+                <img src="{% static 'images\136.webp' %}" alt="Cholesterol treatment">
             </div>
             <div class="treatment-details">
                 <h2>Cholesterol (Hyper cholesterolemia)</h2>
@@ -1316,7 +1339,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://avatars.mds.yandex.net/i?id=bdb3af9a78f720dced6f0f2b3b27db2283f54350-4885197-images-thumbs&n=13"
-                    alt="Swedanam treatment">
+                    alt="Neck Pain  treatment">
             </div>
             <div class="treatment-details">
                 <h2>Neck Pain (Cervical spondylosis)</h2>
@@ -1340,7 +1363,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://www.practostatic.com/fit/47e2d28d81967215671e1789922ec099f2b7c292"
-                    alt="Abhyangam treatment">
+                    alt="Shoulder pain treatment">
             </div>
             <div class="treatment-details">
                 <h2>Shoulder pain(Frozen shoulder)</h2>
@@ -1364,7 +1387,7 @@
 
         <div class="treatment-section reverse">
             <div class="treatment-image">
-                <img src="https://www.functionalmovement.com/store/image/29865" alt="Swedanam treatment">
+                <img src="https://www.functionalmovement.com/store/image/29865" alt="Low Back Pain treatment">
             </div>
             <div class="treatment-details">
                 <h2>Low Back Pain (Lumbar spondylosis).</h2>
@@ -1390,7 +1413,7 @@
         <div class="treatment-section">
             <div class="treatment-image">
                 <img src="https://ayursathya.com/wp-content/uploads/2022/04/AdobeStock_118759893-scaled.jpeg"
-                    alt="Abhyangam treatment">
+                    alt="Sciatica treatment">
             </div>
             <div class="treatment-details">
                 <h2>Sciatica</h2>
@@ -1414,7 +1437,7 @@
 
         <div class="treatment-section reverse">
             <div class="treatment-image">
-                <img src="https://dontimes.ru/wp-content/uploads/2023/11/gipotireoz.jpg" alt="Swedanam treatment">
+                <img src="https://telegra.ph/file/36505317a8f2ccf2a80d7.png" alt="Thyroid treatment">
             </div>
             <div class="treatment-details">
                 <h2>Thyroid</h2>
@@ -1440,7 +1463,8 @@
 
         <div class="treatment-section">
             <div class="treatment-image">
-                <img src="https://ak.picdn.net/shutterstock/videos/1110969089/thumb/8.jpg" alt="Abhyangam treatment">
+                <img src="https://ak.picdn.net/shutterstock/videos/1110969089/thumb/8.jpg"
+                    alt="Varicose Veins treatment">
             </div>
             <div class="treatment-details">
                 <h2>Varicose Veins</h2>
@@ -1465,7 +1489,7 @@
         <div class="treatment-section reverse">
             <div class="treatment-image">
                 <img src="https://www.spineorthocenter.com/wp-content/uploads/2023/05/how-bunions-affect-your-life.jpg"
-                    alt="Swedanam treatment">
+                    alt="Gout treatment">
             </div>
             <div class="treatment-details">
                 <h2>Gout</h2>
@@ -1488,7 +1512,7 @@
 
         <div class="treatment-section">
             <div class="treatment-image">
-                <img src="{% static 'images\pcod.jpg' %}" alt="Abhyangam treatment">
+                <img src="{% static 'images\pcod.jpg' %}" alt="PCOD treatment">
             </div>
             <div class="treatment-details">
                 <h2>PCOD</h2>
@@ -1509,13 +1533,61 @@
 
         </div>
 
+        <div class="treatment-section reverse">
+            <div class="treatment-image">
+                <img src="https://www.healthdigest.com/img/gallery/how-does-eczema-spread/l-intro-1663769383.jpg"
+                    alt="Gout treatment">
+            </div>
+            <div class="treatment-details">
+                <h2>Eczema </h2>
+                <p>Eczema, also known as atopic dermatitis, is a chronic skin condition that causes inflammation,
+                    redness, dryness, and itching. It often appears in early childhood but can affect people of all
+                    ages. Eczema may flare up periodically and can be triggered by irritants, allergens, stress, or
+                    changes in weather. Commonly affected areas include the face, hands, feet, and the insides of the
+                    elbows and knees.</p>
+                <a href="{% url 'advtreatment' %}#Eczema" style="text-decoration: none;">
+                    <button
+                        style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        View
+                    </button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="treatment-section">
+            <div class="treatment-image">
+                <img src="https://www.verywellhealth.com/thmb/fC5dqy2GrHwdqW3ZPcglbb5hGEs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/alopecia_areata-c71b624ae5c345f09e6421565358ca14.jpg"
+                    alt="Gout treatment">
+            </div>
+            <div class="treatment-details">
+                <h2>Alopecia</h2>
+                <p>Alopecia refers to hair loss from the scalp or other parts of the body. It can occur for various
+                    reasons, including genetics, autoimmune disorders, hormonal changes, stress, or certain medical
+                    conditions. One common type is Alopecia Areata, an autoimmune disease where the body’s immune system
+                    mistakenly attacks hair follicles, leading to patchy hair loss. In some cases, alopecia can result
+                    in complete baldness on the scalp (Alopecia Totalis) or the entire body (Alopecia Universalis).</p>
+                <a href="{% url 'advtreatment' %}#Alopecia" style="text-decoration: none;">
+                    <button
+                        style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        View
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+
 
 
     </div>
-
+    <div class="divider"></div>
     <!-- Arrow Navigation -->
-    <div class="arrow arrow-left">❮</div>
-    <div class="arrow arrow-right">❯</div>
+
 
 
 

@@ -589,6 +589,14 @@
             color: #333;
         }
 
+
+        .divider {
+            width: 50%;
+            height: 1px;
+            background-color: #7c9c4a;
+            margin: 30px auto;
+        }
+
         /* If you want to add the WhatsApp icon, include Font Awesome in your project */
     </style>
 </head>
@@ -662,6 +670,7 @@
         <img class="aloe-img" src="https://pngimg.com/d/aloe_vera_PNG49.png" alt="Aloe vera plant" />
     </section>
 
+    <div class="divider"></div>
 
 
     <div class="treatment-section">
@@ -670,10 +679,85 @@
             <h2>Treatments</h2>
         </div>
         <!-- Pizhichil Treatment -->
+        <div class="treatment-card" id="Psoriasis">
+            <h2 class="treatment-title">Psoriasis</h2>
+            <img src="{% static 'images\Psoriasis.png' %}" alt="Njavarakzhi Treatment"
+                class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Psoriasis is a long-term skin condition that causes red, scaly patches on the skin. It happens when
+                    the skin cells build up too quickly
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>SYMPTOMS </h3>
+                    <p>Itchy and dry thick areas of discoloured skin covered with scales. These thick scaly areas
+                        are called plaques. Red scaly skin with severe itching is common symptoms .</p>
+
+                    <p>TYPES :</p>
+                    <ul>
+                        <li>1: Plaque psoriasis - Thick scaly areas of skin covered with scales and reddish
+                            discoloration 80 to 90% are eAected by plaque psoriasis </li>
+                        <li>2: Inverse psoriasis - This type appears in your skin folds. Causes thin plaques without
+                            scales.</li>
+                        <li>3: Guttate psoriasis - Small red drop shaped scaly spot's and often aAects children and
+                            young adults</li>
+                        <li>4: Pustular psoriasis - Pustular Psoriasis has small pus filled bumps on top of plaques.
+                        </li>
+                        <li>5: Erythrodermic psoriasis - This is a severe type of psoriasis that aAected a large area
+                            (more than 90%) of your skin m Causing wide spread skin discoloration and skin shedding.
+                        </li>
+                        <li>6: Sebo psoriasis - this type typically appears on face and scalp as bumps and plaques
+                            with greasy, yellow scale.</li>
+                        <li>7: Nail psoriasis - Causes skin discoloration, pitting and change to your finger nails and
+                            toe nails. </li>
+                        <li>8: Psoriatic arthritis - is a type of arthritis that causes joint pain and swelling.
+                            Psoriatic
+                            arthritis is an autoimmune condition that causes your immune systems to function
+                            abnormally and cause symptoms. About 1 in 3 people diagnosed with psoriasis will also
+                            develop arthritis due to inflammation. Early treatment of psoriatic arthritis can reduce
+                            damage to your joints. </li>
+
+                    </ul>
+                    <p>CAUSES </p>
+                    <ul>
+                        <li>1. Emotional stress </li>
+                        <li>2. Virudha aharas </li>
+                        <li>3. A skin injury likes cuts scraps or surgery </li>
+                        <li>4. Certain medications such as lithium and beta blockers </li>
+                        <li>5. Sudden changes in body temperature due to the weather </li>
+                        <li>6. Family history - Only 10% chance if any one of the parent suAers 50% chances if both
+                            suAers. </li>
+                    </ul>
+                    <p>TREATMENTS </p>
+                    <ul>
+                        <li>Ayurvedic Treatments are in 2 Shodhana treatments and shamana Treatments.
+                            Shodhana treatments are purificatory therapies. This includes the Panchakarma
+                            therapies and pre-panchakarma therapies which purifies the bodies and improves the
+                            immunity of body.</li>
+                        <li>Shamana therapies are includes our specially prepared specialised internal medicines
+                            and external medicines which help in caring diseases. </li>
+                    </ul>
+
+
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Psoriasis Treatments."
+                        class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
         <div class="treatment-card" id="migraine">
             <h2 class="treatment-title">Migraine</h2>
-            <img src="https://cdn.sanity.io/images/0vv8moc6/pharmacytimes/20889be9c8c12dc41a85d9e54ca3d9942207c31d-5616x3744.jpg?fit=crop&amp;auto=format"
-                alt="Pizhichil Treatment" class="treatment-image">
+            <img src="{% static 'images\migrain.png' %}" alt="Pizhichil Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Migraine is a type of headache that causes intense, throbbing pain—usually on one side of the head.
@@ -705,11 +789,12 @@
                     <p>The treatment begins with a brief massage to prepare the body. The patient then lies on a wooden treatment table while 2-4 therapists simultaneously pour warm medicated oil from small pieces of cloth soaked in the oil. This continuous stream of oil promotes deep relaxation, nourishes tissues, and allows therapeutic substances in the oil to penetrate deep into the skin. A typical session lasts 45-60 minutes and is usually recommended for 7-21 days for optimal results.</p> -->
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Migraine%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Migraine Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -758,8 +843,7 @@
         <!-- Njavarakizhi Treatment -->
         <div class="treatment-card" id="sinusitis">
             <h2 class="treatment-title">Sinusitis</h2>
-            <img src="https://www.cranio.in.ua/wp-content/uploads/2023/08/sinusit-lechenie.webp"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\666.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Sinusitis is an inflammation or swelling of the tissue lining the sinuses, which are air-filled
@@ -791,11 +875,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Sinusitis%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Sinusitis Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
@@ -856,8 +941,7 @@
 
         <div class="treatment-card" id="depression">
             <h2 class="treatment-title">Depression</h2>
-            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/08/23/f6fe8267-63dd-4643-8be6-6e8f63ab9391_c4c9329d.jpg"
-                alt="Pizhichil Treatment" class="treatment-image">
+            <img src="{% static 'images\dip.png' %}" alt="Pizhichil Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Depression is a common but serious mental health condition that affects how a person feels, thinks,
@@ -890,11 +974,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Depression%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Depression Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -936,8 +1021,7 @@
         <!-- Example of additional treatment cards with expanded content -->
         <div class="treatment-card" id="rheumatoid">
             <h2 class="treatment-title">Rheumatoid Arthritis</h2>
-            <img src="{% static 'images\1.11.jpg' %}"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\1.11.jpg' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Inflammatory Arthritis in which all the major and minor joints are associated with pain and
@@ -963,11 +1047,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Depression%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Depression Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1004,8 +1089,7 @@
 
         <div class="treatment-card" id="osteoarthritis">
             <h2 class="treatment-title">Osteoarthritis</h2>
-            <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2024/09/01/7cf76f60-588c-4688-be95-73120cf1447c_5f7768ee.jpg"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\Osteoarthritis.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Osteoarthritis is a joint disease where the cartilage wears down over time, causing pain, stiffness,
@@ -1032,11 +1116,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Osteoarthritis%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Osteoarthritis Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1079,8 +1164,7 @@
 
         <div class="treatment-card" id="paralysis">
             <h2 class="treatment-title">Paralysis</h2>
-            <img src="https://images.hub.ldpr.ru/display?path=media/images/ivanovo/4569406f59218a2638edc462033f5923f1c71f561b307252ccb3c5f5494d3f3b.jpg&op=resize&h=600"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\ddddd.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Paralysis is a condition where there is a loss of muscle function in one or more parts of the body.
@@ -1108,11 +1192,12 @@
 
                     </ul>
                     <div class="whatsapp-enquiry">
-                        <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Paralysis%Treatments." class="whatsapp-btn" target="_blank">
+                        <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Paralysis Treatments."
+                            class="whatsapp-btn" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i> Enquire
                         </a>
                     </div>
-                    
+
 
 
                 </div>
@@ -1151,8 +1236,7 @@
 
         <div class="treatment-card" id="Post-natal">
             <h2 class="treatment-title">Post-natal care</h2>
-            <img src="https://cdn.uza.uz/2023/01/02/07/03/isnpjOtntgFuquBoseSV2a1tcmDPQOPC_normal.JPG"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\baby.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     The post –natal period is a crucial phase for a new mother. According to Ayurveda, the first 42 days
@@ -1185,11 +1269,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Post-natal care%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Post-natal care Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1242,8 +1327,7 @@
 
         <div class="treatment-card" id="dandruff">
             <h2 class="treatment-title">Dandruff</h2>
-            <img src="https://static.india.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-16-at-1.09.21-PM.jpeg?impolicy=Medium_Resize&w=1200&h=800"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\1333.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Dandruff is a common scalp condition where dead skin flakes off, often causing itching and dryness.
@@ -1268,11 +1352,12 @@
                     </ul>
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Dandruff%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Dandruff Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1309,8 +1394,7 @@
 
         <div class="treatment-card" id="Hair">
             <h2 class="treatment-title">Hair fall</h2>
-            <img src="https://img.huffingtonpost.com/asset/5b7ad084200000de0237a17b.jpeg?cache=sjqr7Vrruf"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\hair.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Hair fall refers to the shedding or loss of hair from the scalp or other parts of the body. It can
@@ -1337,11 +1421,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Hair fal%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Hair fal Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
                     <div class="image-gallery">
@@ -1375,8 +1460,7 @@
 
         <div class="treatment-card" id="stress">
             <h2 class="treatment-title">Stress</h2>
-            <img src="https://cdn.newswire.com/files/x/65/ed/f727c2f53cc666767ad0bcb42e85.jpg"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\stress.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Stress is the body's natural response to pressure or challenges. It can be emotional, mental, or
@@ -1410,11 +1494,12 @@
                         usually requires a course of 7-14 days for optimal benefits.</p>
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Stress%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Stress Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1451,8 +1536,7 @@
 
         <div class="treatment-card" id="hypertension">
             <h2 class="treatment-title">Hypertension</h2>
-            <img src="https://cdn131.picsart.com/328363891031211.png" alt="Njavarakzhi Treatment"
-                class="treatment-image">
+            <img src="{% static 'images\bp.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Hypertension, also known as high blood pressure, is a condition where the force of the blood against
@@ -1480,11 +1564,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Hypertension%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Hypertension Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1521,8 +1606,7 @@
 
         <div class="treatment-card" id="Prameha">
             <h2 class="treatment-title">Prameha</h2>
-            <img src="{% static 'images/Diabetes_Mellitus[1].jpg' %}" alt="Njavarakzhi Treatment"
-                class="treatment-image">
+            <img src="{% static 'images\ffff.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
 
             <div class="treatment-content">
                 <p class="treatment-description">
@@ -1558,11 +1642,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Prameha%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Prameha Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <!-- <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1597,8 +1682,7 @@
         </div>
         <div class="treatment-card" id="cholesterol">
             <h2 class="treatment-title">Cholesterol (Hyper cholesterolemia)</h2>
-            <img src="{% static 'images\col_page-0001 (1).jpg ' %}"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\333.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Cholesterol (Hypercholesterolemia) is a condition where there’s too much cholesterol (a type of fat)
@@ -1642,11 +1726,12 @@
                     </p>
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Cholesterol (Hyper cholesterolemia)%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Cholesterol (Hyper cholesterolemia) Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1679,8 +1764,7 @@
 
         <div class="treatment-card" id="neck">
             <h2 class="treatment-title">Neck Pain(Cervical spondylosis)</h2>
-            <img src="https://avatars.mds.yandex.net/i?id=2842f1e7acd2f0c5da514bc95084c531cf4e7f3a-5578976-images-thumbs&n=13"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\555.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Neck Pain (Cervical Spondylosis) is a condition caused by age-related wear and tear of the cervical
@@ -1708,11 +1792,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%NECK PAIN (Cervical spondylosis)%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about NECK PAIN (Cervical spondylosis) Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1760,8 +1845,7 @@
 
         <div class="treatment-card" id="shoulder">
             <h2 class="treatment-title">Shoulder Pain (Frozen shoulder)</h2>
-            <img src="https://rostfit.ru/upload/images/training/323-1.jpg" alt="Njavarakzhi Treatment"
-                class="treatment-image">
+            <img src="{% static 'images\ddd.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Shoulder Pain (Frozen Shoulder), also known as Adhesive Capsulitis, is a condition where the
@@ -1789,11 +1873,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%SHOULDER PAIN (Frozen shoulder)%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about SHOULDER PAIN (Frozen shoulder) Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1830,8 +1915,7 @@
 
         <div class="treatment-card" id="low-back">
             <h2 class="treatment-title">Low Back Pain (Lumbar spondylosis).</h2>
-            <img src="https://gdb.rferl.org/2331F05C-D982-4E9E-9F4E-6D93473AB1DE_w1200_r1.jpg"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\2333.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Low Back Pain (Lumbar Spondylosis) is a degenerative condition affecting the lower spine, often
@@ -1863,11 +1947,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%LOW BACK PAIN (Lumbar spondylosis)%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about LOW BACK PAIN (Lumbar spondylosis) Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1917,8 +2002,7 @@
 
         <div class="treatment-card" id="Sciatica">
             <h2 class="treatment-title">Sciatica</h2>
-            <img src="https://ak.picdn.net/shutterstock/videos/1110146821/thumb/1.jpg" alt="Njavarakzhi Treatment"
-                class="treatment-image">
+            <img src="{% static 'images\ccd.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Sciatica is a condition caused by irritation or compression of the sciatic nerve, leading to sharp
@@ -1946,11 +2030,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%SCIATICA%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Sctatica Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -1993,8 +2078,7 @@
 
         <div class="treatment-card" id="thyroid">
             <h2 class="treatment-title">Thyroid</h2>
-            <img src="https://avatars.mds.yandex.net/i?id=1e9b4d6ca0e1ae32700c09ff97dd3c2f6112af74-5668913-images-thumbs&n=13"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\cccc3.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Thyroid disorders, such as hypothyroidism and hyperthyroidism, occur due to imbalances in the
@@ -2019,11 +2103,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Thyroid%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details aboutThyroid Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <!-- <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -2052,8 +2137,7 @@
 
         <div class="treatment-card" id="Varicose">
             <h2 class="treatment-title">Varicose Veins</h2>
-            <img src="https://ak.picdn.net/shutterstock/videos/1110969089/thumb/8.jpg" alt="Njavarakzhi Treatment"
-                class="treatment-image">
+            <img src="{% static 'images\xxxx.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Varicose Veins are swollen, twisted veins usually appearing in the legs due to poor blood
@@ -2080,11 +2164,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Varicose Veins%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Varicose Veins Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -2117,8 +2202,7 @@
 
         <div class="treatment-card" id="Gout">
             <h2 class="treatment-title">Gout</h2>
-            <img src="https://avatars.mds.yandex.net/i?id=35e1cb680c565bbbbf52292b5c00cb6738476f66-9694985-images-thumbs&n=13"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\ccc.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Gout is a form of arthritis caused by excess uric acid in the blood, leading to sudden, severe pain,
@@ -2147,11 +2231,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%Gout%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about Gout Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -2194,8 +2279,7 @@
         </div>
         <div class="treatment-card" id="pcod">
             <h2 class="treatment-title">PCOD</h2>
-            <img src="{% static 'images\pcod.jpg' %}"
-                alt="Njavarakzhi Treatment" class="treatment-image">
+            <img src="{% static 'images\pcod.jpg' %}" alt="Njavarakzhi Treatment" class="treatment-image">
             <div class="treatment-content">
                 <p class="treatment-description">
                     Polycystic Ovarian Disease (PCOD) is a hormonal disorder where multiple cysts form in the ovaries,
@@ -2223,11 +2307,12 @@
 
                 </div>
                 <div class="whatsapp-enquiry">
-                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more%20details%about%PCOD%Treatments." class="whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about PCOD Treatments."
+                        class="whatsapp-btn" target="_blank">
                         <i class="fa-brands fa-whatsapp"></i> Enquire
                     </a>
                 </div>
-                
+
 
                 <div class="expanded-images">
                     <h3>Treatment Gallery</h3>
@@ -2263,9 +2348,141 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="treatment-card" id="Eczema">
+            <h2 class="treatment-title">Eczema</h2>
+            <img src="{% static 'images\cccc.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Common chronic skin condition characterised by dry itchy and inflammed skin. It's also
+                    known as atopic dermatitis. Comes under an autoimmune disease.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Eczema, also known as atopic dermatitis, is a long-term skin condition that causes dry, itchy,
+                        inflamed, and irritated skin. It can appear anywhere on the body and often flares up due to
+                        triggers like allergens, stress, weather changes, or harsh skincare products. Eczema is most
+                        common in children but can affect people of all ages..</p>
+
+                    <p>Symptoms:</p>
+                    <ul>
+                        <li>1. Dry, itchy skin </li>
+                        <li>2. Inflammation skin becomes red swollen and inflammed especially in areas like the face
+                            elbows knees and hands. </li>
+                        <li>3. Rashes - dry and scaly or bumpy patches on skin </li>
+                        <li>4. Cracked or blistered skin - skin may became cracked, blistered, or ever bleed. </li>
+                        <li>5. Skin thickening - skin becomes rough flare in multiple parts of the body at the
+                            sometimes. </li>
+                    </ul>
+                    <p>Causes</p>
+                    <ul>
+                        <li>1. Genetics - a family history of Eczema, asthma or heavy fever. </li>
+                        <li>2. Environmental factors - Irritants, Allergens, and that can trigger the condition. </li>
+                        <li>3. Weakened skin barrier </li>
+                        <li>4. Virudha Aharas ( incompatable foods ) </li>
+                        <li>5. Stress </li>
+                        <li>6. Hormonal changes </li>
+                        <li>7. Sudden Change in the body temperature - sweating and then becoming chilled </li>
+                        <li>8. Having very dry skin </li>
+                        <li>9. Taking baths in too hot or last too long </li>
+                    </ul>
+                    <p>Types</p>
+                    <ul>
+                        <li>1. Atopic dermatitis - characterized by dry, itchy skin and a family history of allergies.
+                            Often starting in childhood </li>
+                        <li>2. Contact dermatitis - skin will be allergic or irritable to substances that comes in
+                            contact with the skin like chemicals, soaps, dust, metals, etc. </li>
+                        <li>3. Dyshidrotic Eczema - occurs on the palms and soles of the feet characterized by small
+                            itchy blisteres </li>
+                        <li>4. Hand Eczema - form of contact dermatitis eAecting the hands often caused by repetitive
+                            exposure to Irritants. </li>
+                    </ul>
+
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about PCOD Treatments."
+                        class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="treatment-card" id="Alopecia">
+            <h2 class="treatment-title">Alopecia </h2>
+            <img src="{% static 'images\xccc.png' %}" alt="Njavarakzhi Treatment" class="treatment-image">
+            <div class="treatment-content">
+                <p class="treatment-description">
+                    Auto immune disease where body's immune system aAects hair follicles. Refers to hair
+                    lose. Characterized by hair fall in circle form in scalp, or eyebrows, moustache, chin, or
+                    body hair fall can be diAuse or localised, temporary or permanent.
+                </p>
+                <a href="#" class="more-btn">more...</a>
+            </div>
+            <!-- Add expanded content section here as above -->
+            <div class="expanded-content" style="display: none;">
+                <div class="expanded-description">
+                    <h3>Treatment Details</h3>
+                    <p>Auto immune disease where body's immune system aAects hair follicles. Refers to hair
+                        lose. Characterized by hair fall in circle form in scalp, or eyebrows, moustache, chin, or
+                        body hair fall can be diAuse or localised, temporary or permanent. .</p>
+
+                    <p>Types:</p>
+                    <ul>
+                        <li>1. Alopecia Areata - Hair fall in patches often on scalp </li>
+                        <li>2. Androgenetic Alopecia - Most common type of hair lose, referred to as pattern boldness or
+                            hair lose. </li>
+                        <li>3. DiAuse Alopecia - sudden thinning of hair all over the scalp. </li>
+                        <li>4. Alopecia Totalis - lose of all scalp hair </li>
+                        <li>5. Alopecia universalis - lose of hair on the body</li>
+                    </ul>
+                    <p>Causes.</p>
+                    <ul>
+                        <li>1. Heredity </li>
+                        <li>2. Hormonal changes - Sudden hair lose can be triggered by hormonal variations / changes
+                        </li>
+                        <li>3. Medical conditions - certain conditions, like thyroid issues, can contribute to hair
+                            loss. </li>
+                        <li>4. Stress - physical or emotional stress </li>
+                        <li>5. Medications - some medications can also cause hair loss </li>
+                        <li>6. Genetics - Family History of hair loss can increase the risk of developing alopecia.</li>
+                    </ul>
+                    <p>Symptoms </p>
+                    <ul>
+                        <li>1. Patchy hair loss </li>
+                        <li>2. Hair thinning </li>
+                        <li>3. Itching or burning sensation </li>
+                        <li>4. Nail changes- Causing pitting, ridges, or other abnormalities of nail</li>
+                    </ul>
+
+
+                </div>
+                <div class="whatsapp-enquiry">
+                    <a href="https://wa.me/919995206102?text=Hi%20I%20am%20interested%20to%20know%20more details about PCOD Treatments."
+                        class="whatsapp-btn" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Enquire
+                    </a>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
     </div>
 
-
+    <div class="divider"></div>
     <script>
         // JavaScript for the slideshow functionality
         let slideIndex = 0;

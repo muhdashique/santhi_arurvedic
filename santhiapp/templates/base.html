@@ -1042,12 +1042,11 @@
         </div>
         <div class="footer-divider"></div>
         <div class="footer-nav">
-            <a href="#">Home</a> |
-            <a href="#">About us</a> |
-            <a href="#">Gallery</a> |
-            <a href="#">Treatments</a> |
-            <!-- <a href="#">Treatments</a> | -->
-            <a href="#">Facilities</a>
+            <a href="{% url 'index' %}">Home</a> |
+            <a href="{% url 'about' %}">About us</a> |
+            <a href="{% url 'gallery' %}">Gallery</a> |
+            <a href="{% url 'treatment' %}">Treatments</a> |
+            <a href="{% url 'facilities' %}">Facilities</a>
         </div>
         <div class="footer-copyright">
             © 2025 All rights reserved Santhi Ayurvedic Hospital
