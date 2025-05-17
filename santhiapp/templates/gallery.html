@@ -76,19 +76,7 @@
         }
 
         .banner-slide:nth-child(1) {
-            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
-        }
-
-        .banner-slide:nth-child(2) {
-            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
-        }
-
-        .banner-slide:nth-child(3) {
             background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
-        }
-
-        .banner-slide:nth-child(4) {
-            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
         }
 
         h1 {
@@ -108,7 +96,7 @@
 
         .banner-btn {
             padding: 15px 35px;
-            background-color: #221056;
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 50px;
@@ -492,55 +480,17 @@
 
 <body>
     <!-- Multiple Image Scrolling Banner -->
-    <div class="banner-container">
-        <!-- Slide 1 -->
-        <div class="banner-slide active">
-            <div class="banner-content">
-                <h1>Ancient Ayurvedic Healing</h1>
-                <p>Experience the transformative power of traditional Ayurveda treatments, customized to restore balance
-                    and promote holistic wellness.</p>
-                <button class="banner-btn">Discover Our Treatments</button>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Natural Herbal Remedies</h1>
-                <p>Our authentic herbal formulations are prepared with care to address your unique body constitution and
-                    health concerns.</p>
-                <button class="banner-btn">Explore Remedies</button>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Mind-Body Balance</h1>
-                <p>Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
+     <div class="banner-container">
+    <!-- Only Slide -->
+    <div class="banner-slide active">
+        <div class="banner-content">
+            <h1 class="heder" style="color: white;">Mind-Body Balance</h1>
+            <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
                     programs.</p>
-                <button class="banner-btn">View Programs</button>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Personalized Care</h1>
-                <p>Our Ayurvedic experts design customized treatment plans based on your individual dosha composition
-                    and health needs.</p>
-                <button class="banner-btn">Book Consultation</button>
-            </div>
-        </div>
-
-        <!-- Navigation Dots -->
-        <div class="slide-indicators">
-            <span class="indicator active" onclick="setSlide(0)"></span>
-            <span class="indicator" onclick="setSlide(1)"></span>
-            <span class="indicator" onclick="setSlide(2)"></span>
-            <span class="indicator" onclick="setSlide(3)"></span>
+            <button class="banner-btn">View Programs</button>
         </div>
     </div>
+</div>
 
     <style>
         .wayanad-header {
@@ -607,28 +557,7 @@
         </p>
     </div>
 
-    <div class="gallery-container">
-        <div class="gallery-grid">
-            <div class="gallery-item item-1">
-                <img src="https://cdn-images-1.medium.com/v2/resize:fill:1600:480/gravity:fp:0.5:0.4/1*Z6RoXHl79yHhjRKpUP7PtA.jpeg"
-                    alt="Tropical beach with clear turquoise water and palm trees">
-            </div>
-            <div class="gallery-item item-2">
-                <img src="https://im3.turbina.ru/photos.4/5/1/4/8/2/2728415/big.photo.jpg"
-                    alt="Aerial view of coastal waves">
-            </div>
-            <div class="gallery-item item-3">
-                <img src="https://avatars.dzeninfra.ru/get-zen_doc/61014/pub_5ecd12a9a5792509dd6dd667_5ecd1642c941f54857bb256d/scale_1200"
-                    alt="Long stretch of white sand beach">
-            </div>
-            <div class="gallery-item item-4">
-                <p class="quote">Nature is not a place to visit, it is home. Ayurveda brings us back to that home.🌱</p>
-            </div>
-            <div class="gallery-item item-5">
-                <img src="https://i.ytimg.com/vi/KXiqcLXLHb8/maxresdefault.jpg" alt="Friends on a boat in blue waters">
-            </div>
-        </div>
-    </div>
+    
 
 
     <div class="divider"></div>
@@ -637,96 +566,110 @@
 
         <div class="gallery">
             <div class="gallery-item">
-                <img src="https://content.presspage.com/uploads/685/1920_kumarakomlakeresort-kumarakom-2-2.jpg?10000" alt="Abhyanga Treatment" class="gallery-image">
+                <img src="{% static 'images\shandhi.jpg' %}" alt="Abhyanga Treatment" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Abhyanga</h3>
-                    <p class="caption-text"> Herbal oil massage for relaxation and healing.</p>
+                    <!-- <h3 class="caption-title">Abhyanga</h3>
+                    <p class="caption-text"> Herbal oil massage for relaxation and healing.</p> -->
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="https://images.trvl-media.com/hotels/7000000/6510000/6505000/6504916/3f8967f9_z.jpg" alt="Meditation Practice" class="gallery-image">
+                <img src="{% static 'images\IMG_0346.jpg' %}" alt="Meditation Practice" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Steam</h3>
-                    <p class="caption-text">Herbal steam therapy for detox and relaxation.</p>
+                    <!-- <h3 class="caption-title">Steam</h3>
+                    <p class="caption-text">Herbal steam therapy for detox and relaxation.</p> -->
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="https://avatars.mds.yandex.net/get-altay/6236523/2a000001814127e4b30d557a17394e67d86d/diploma" alt="Herbal Oil Massage" class="gallery-image">
+                <img src="{% static 'images\nonac1.jpg' %}" alt="Herbal Oil Massage" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Navarakizhi</h3>
-                    <p class="caption-text">Rice bundle massage for strength and rejuvenation.</p>
+                    <!-- <h3 class="caption-title">Navarakizhi</h3>
+                    <p class="caption-text">Rice bundle massage for strength and rejuvenation.</p> -->
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="https://karmacommunity.karmagroup.com/wp-content/uploads/2020/08/images_karmagroup_banner-WP.jpg" alt="Swedana Treatment" class="gallery-image">
+                <img src="{% static 'images\IMG_0312_(copy).jpg' %}" alt="Swedana Treatment" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Shirodhara</h3>
-                    <p class="caption-text">Warm oil poured on forehead for mental calm.</p>
+                    <!-- <h3 class="caption-title">Shirodhara</h3>
+                    <p class="caption-text">Warm oil poured on forehead for mental calm.</p> -->
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img src="https://treeoflife.cz/data/filecache/36/LDF_375.jpg" alt="Oil Treatment" class="gallery-image">
+                <img src="{% static 'images\hos1.jpg' %}" alt="Oil Treatment" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Panchakarma</h3>
-                    <p class="caption-text">Ayurvedic detox therapy for body and mind purification.</p>
+                    <!-- <h3 class="caption-title">Panchakarma</h3>
+                    <p class="caption-text">Ayurvedic detox therapy for body and mind purification.</p> -->
                 </div>
             </div>
 
+           
+           
             <div class="gallery-item">
-                <img src="https://avatars.mds.yandex.net/i?id=268b0aa7b7323809f2a7afccd5bb4cf91add767d-11008180-images-thumbs&n=13" alt="Herbal Compress Massage" class="gallery-image">
+                <img src="{% static 'images\IMG_0307.jpg' %}" alt="Herbal Compress Massage" class="gallery-image">
                 <div class="image-caption">
-                    <h3 class="caption-title">Udvartana</h3>
-                    <p class="caption-text">Herbal Ayurvedic massage for detox and slimming.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://sun9-23.userapi.com/impg/a_kCjVOy8qTUYoAwvANMBiddwYQLeinIaRg70w/HgwK0_prWGE.jpg?quality=95&blur=50,20&as=32x22,48x33,72x50,108x74,160x110,240x165,360x248,480x331,540x372,640x441,720x496,1080x744&sign=a0fe899bc582baff01b9134758cd5aa5&from=bu&u=6zEPSZMkW8lpzUuHu83fZxHbOs2-E8S4n28Oy6m4jYg&cs=807x556" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">Shiropichu</h3>
-                    <p class="caption-text">Medicated head oil therapy for relaxation</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.squarespace-cdn.com/content/v1/5fa5c946b3f20966e04733c6/1614286101461-ZC6GB90MELKI0U2MV28V/Greevavasthi_1600x.jpg?format=2500w" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">Yapana Vasti</h3>
-                    <p class="caption-text">Rejuvenating medicated enema for vital strength.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://avatars.mds.yandex.net/get-ydo/12406519/2a0000018dae5b620b3ad015f09eb96fc010/diploma" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">podikizhi</h3>
-                    <p class="caption-text">Herbal powder massage for pain relief.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://avatars.mds.yandex.net/get-altay/5307539/2a0000017b0fe8ed4de2a80da8f8989df632/XXL_height" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">Dhara</h3>
-                    <p class="caption-text">Steady herbal pour for mental relaxation.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://static.tildacdn.com/tild6561-3861-4564-a136-363936626233/15116697-48bf-4767-b.jpg" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">Nasyam</h3>
-                    <p class="caption-text">Nasal therapy for sinus and detox.</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://www.practostatic.com/fit/d26fc8f04b1af4db84aad162c24347665f610c88" alt="Herbal Compress Massage" class="gallery-image">
-                <div class="image-caption">
-                    <h3 class="caption-title">Lepam</h3>
-                    <p class="caption-text">Herbal paste application for skin healing.</p>
+                    <!-- <h3 class="caption-title">Yapana Vasti</h3>
+                    <p class="caption-text">Rejuvenating medicated enema for vital strength.</p> -->
                 </div>
             </div>
         </div>
     </div>
+    <style>
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .gallery-item {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.03);
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .image-caption {
+        padding: 10px;
+    }
+
+    .caption-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .caption-text {
+        font-size: 0.95rem;
+        color: #666;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .gallery {
+            grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+        }
+    }
+
+    @media (max-width: 640px) {
+        .gallery {
+            grid-template-columns: 1fr; /* 1 per row on mobile */
+        }
+    }
+</style>
     <div class="divider"></div>
     <style>
         .wayanad-container {

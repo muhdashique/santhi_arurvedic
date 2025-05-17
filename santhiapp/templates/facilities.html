@@ -76,20 +76,8 @@
             padding: 0 15px;
         }
 
-        .banner-slide:nth-child(1) {
-            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
-        }
-
-        .banner-slide:nth-child(2) {
-            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
-        }
-
-        .banner-slide:nth-child(3) {
+      .banner-slide:nth-child(1) {
             background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
-        }
-
-        .banner-slide:nth-child(4) {
-            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
         }
 
         h1 {
@@ -109,7 +97,7 @@
 
         .banner-btn {
             padding: 15px 35px;
-            background-color: #221056;
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 50px;
@@ -272,7 +260,7 @@
         }
 
         .facility-text strong {
-            color: #004d40;
+            color: #F74B00;
         }
 
         @media (max-width: 768px) {
@@ -534,7 +522,7 @@
             transform: translate(-50%, -50%);
             width: 60px;
             height: 60px;
-            background-color: rgba(138, 174, 90, 0.8);
+            background-color: #F74B00;
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -584,55 +572,17 @@
 
 <body>
     <!-- Multiple Image Scrolling Banner -->
-    <div class="banner-container">
-        <!-- Slide 1 -->
-        <div class="banner-slide active">
-            <div class="banner-content">
-                <h1>Ancient Ayurvedic Healing</h1>
-                <p>Experience the transformative power of traditional Ayurveda treatments, customized to restore balance
-                    and promote holistic wellness.</p>
-                <button class="banner-btn">Discover Our Treatments</button>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Natural Herbal Remedies</h1>
-                <p>Our authentic herbal formulations are prepared with care to address your unique body constitution and
-                    health concerns.</p>
-                <button class="banner-btn">Explore Remedies</button>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Mind-Body Balance</h1>
-                <p>Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
+     <div class="banner-container">
+    <!-- Only Slide -->
+    <div class="banner-slide active">
+        <div class="banner-content">
+            <h1 class="heder" style="color: white;">Mind-Body Balance</h1>
+            <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
                     programs.</p>
-                <button class="banner-btn">View Programs</button>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1>Personalized Care</h1>
-                <p>Our Ayurvedic experts design customized treatment plans based on your individual dosha composition
-                    and health needs.</p>
-                <button class="banner-btn">Book Consultation</button>
-            </div>
-        </div>
-
-        <!-- Navigation Dots -->
-        <div class="slide-indicators">
-            <span class="indicator active" onclick="setSlide(0)"></span>
-            <span class="indicator" onclick="setSlide(1)"></span>
-            <span class="indicator" onclick="setSlide(2)"></span>
-            <span class="indicator" onclick="setSlide(3)"></span>
+            <button class="banner-btn">View Programs</button>
         </div>
     </div>
+</div>
     <style>
         .header-section {
             text-align: center;
@@ -687,6 +637,27 @@
                 padding: 0 15px;
             }
         }
+        .image2,
+.image3,
+.image4 {
+  display: none;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image1 img {
+  width: 100%;
+  height: 800px;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
     </style>
 
     <div class="container">
@@ -706,23 +677,12 @@
 
         <div class="content">
             <div class="images">
-                <div class="image image1">
-                    <img src="https://images.trvl-media.com/hotels/2000000/1090000/1082500/1082408/9ea7d481_z.jpg"
-                        alt="Ayurvedic pulse diagnosis treatment">
-                </div>
-                <div class="image image2">
-                    <img src="https://avatars.mds.yandex.net/i?id=ef70beaa7220c792c545ef651fce87b3_l-4076521-images-thumbs&ref=rim&n=13&w=2048&h=1365"
-                        alt="Herbal medicine cabinet">
-                </div>
-                <div class="image image3">
-                    <img src="https://cdn.mos.cms.futurecdn.net/WT38zcB4sqEgxvzZFToYa-1920-80.png"
-                        alt="View of mountains and natural surroundings">
-                </div>
-                <div class="image image4">
-                    <img src="https://avatars.mds.yandex.net/get-altay/6236523/2a000001814127e4b30d557a17394e67d86d/diploma"
-                        alt="Ayurvedic herbal preparations">
-                </div>
-            </div>
+  <div class="image image1">
+    <img src="https://www.blumedical.com/wp-content/uploads/2024/06/yoga-e-acufene.jpg"
+         alt="Ayurvedic pulse diagnosis treatment">
+  </div>
+</div>
+
 
             <div class="facilities">
                 <div class="description">

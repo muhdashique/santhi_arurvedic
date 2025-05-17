@@ -73,20 +73,10 @@
         }
 
         .banner-slide:nth-child(1) {
-            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
-        }
-
-        .banner-slide:nth-child(2) {
-            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
-        }
-
-        .banner-slide:nth-child(3) {
             background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
         }
 
-        .banner-slide:nth-child(4) {
-            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
-        }
+       
 
         .heder {
             font-size: 3.5rem;
@@ -105,7 +95,7 @@
 
         .banner-btn {
             padding: 15px 35px;
-            background-color: #221056;
+            background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 50px;
@@ -794,55 +784,18 @@
 
 <body>
     <!-- Full Width Banner -->
-    <div class="banner-container">
-        <!-- Slide 1 -->
-        <div class="banner-slide active">
-            <div class="banner-content">
-                <h1 class="heder" style="color: white;">Ancient Ayurvedic Healing</h1>
-                <p style="color: white;">Experience the transformative power of traditional Ayurveda treatments,
-                    customized to restore balance and promote holistic wellness.</p>
-                <button class="banner-btn">Discover Our Treatments</button>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 class="heder" style="color: white;">Natural Herbal Remedies</h1>
-                <p style="color: white;">Our authentic herbal formulations are prepared with care to address your unique
-                    body constitution and health concerns.</p>
-                <button class="banner-btn">Explore Remedies</button>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 class="heder" style="color: white;">Mind-Body Balance</h1>
-                <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic
-                    Ayurvedic wellness programs.</p>
-                <button class="banner-btn">View Programs</button>
-            </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 class="heder" style="color: white;">Personalized Care</h1>
-                <p style="color: white;">Our Ayurvedic experts design customized treatment plans based on your
-                    individual dosha composition and health needs.</p>
-                <button class="banner-btn">Book Consultation</button>
-            </div>
-        </div>
-
-        <!-- Navigation Dots -->
-        <div class="slide-indicators">
-            <span class="indicator active" onclick="setSlide(0)"></span>
-            <span class="indicator" onclick="setSlide(1)"></span>
-            <span class="indicator" onclick="setSlide(2)"></span>
-            <span class="indicator" onclick="setSlide(3)"></span>
+<div class="banner-container">
+    <!-- Only Slide -->
+    <div class="banner-slide active">
+        <div class="banner-content">
+            <h1 class="heder" style="color: white;">Mind-Body Balance</h1>
+            <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
+                    programs.</p>
+            <button class="banner-btn">View Programs</button>
         </div>
     </div>
+</div>
+
 
 
 
@@ -872,41 +825,28 @@
         </div>
     </section>
     <div class="divider"></div>
-    <div class="ayurvedic-container">
-        <div class="image-grid">
-            <div class="image-container">
-                <img class="ayurvedic-image"
-                    src="https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg"
-                    alt="Spa setup with essential oils, towels, and flowers"
-                    style="width: 100%;height: 100%;object-fit: cover;">
-            </div>
-            <div class="image-container">
-                <img class="ayurvedic-image" src="https://kompastour.com/useruploads/hotels/hotel_b6cd1738d9.jpg"
-                    alt="Ayurvedic herbs, mortar and pestle">
-            </div>
-            <div class="image-container">
-                <img class="ayurvedic-image"
-                    src="https://i.pinimg.com/originals/0d/19/79/0d1979d323fc13377153057d960ebc28.jpg"
-                    alt="Herbal compress balls and spices">
-            </div>
-            <div class="image-container">
-                <img class="ayurvedic-image"
-                    src="https://cdn.tripster.ru/thumbs2/5c1e5d6a-3070-11ee-a6e1-2258946a8a8d.1080x810.jpeg"
-                    alt="Massage oils and towels">
-            </div>
-        </div>
-        <div class="content">
-            <h1 class="pt-10 text-3xl md:text-4xl lg:text-5xl">Ayurvedic Treatments: Revitalizing Life, Naturally</h1>
-            <p>Step into the world of Ayurveda, where ancient therapies harmonize with modern life to bring lasting
-                wellness. From easing chronic ailments to rejuvenating your body and mind, Ayurvedic treatments are
-                rooted in balance and holistic healing. Discover the transformative effects of natural remedies and
-                personalized care, restoring vitality to your life—one step at a time.</p>
-            <p>From improving digestion and boosting immunity to reducing stress and enhancing mental clarity, Ayurveda
-                fosters overall wellness. It's therapies, like herbal treatments and rejuvenating massages, harmonize
-                the
-                body with nature, offering a sustainable path to vitality and balance.</p>
-        </div>
+    <div class="ayurvedic-container" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+    <!-- Single Image on Left -->
+    <div class="image-container" style="flex: 1; min-width: 300px;">
+        <img class="ayurvedic-image"
+            src="https://avatars.mds.yandex.net/get-altay/5307539/2a0000017b0fe8ed4de2a80da8f8989df632/XXL_height"
+            alt="Spa setup with essential oils, towels, and flowers"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
     </div>
+
+    <!-- Content on Right -->
+    <div class="content" style="flex: 1; min-width: 300px;">
+        <h1 class="pt-10 text-3xl md:text-4xl lg:text-5xl">Ayurvedic Treatments: Revitalizing Life, Naturally</h1>
+        <p>Step into the world of Ayurveda, where ancient therapies harmonize with modern life to bring lasting
+            wellness. From easing chronic ailments to rejuvenating your body and mind, Ayurvedic treatments are
+            rooted in balance and holistic healing. Discover the transformative effects of natural remedies and
+            personalized care, restoring vitality to your life—one step at a time.</p>
+        <p>From improving digestion and boosting immunity to reducing stress and enhancing mental clarity, Ayurveda
+            fosters overall wellness. Its therapies, like herbal treatments and rejuvenating massages, harmonize
+            the body with nature, offering a sustainable path to vitality and balance.</p>
+    </div>
+</div>
+
     <div class="divider"></div>
 
 

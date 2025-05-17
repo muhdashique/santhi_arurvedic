@@ -82,19 +82,7 @@
         }
 
         .banner-slide:nth-child(1) {
-            background-image: url('https://www.jetwinghotels.com/jetwinglighthouse/wp-content/uploads/sites/24/2019/06/ayurveda-treatments-category-new-1489x816.jpg');
-        }
-
-        .banner-slide:nth-child(2) {
-            background-image: url('https://i.ytimg.com/vi/joo2AGinGVU/maxresdefault.jpg');
-        }
-
-        .banner-slide:nth-child(3) {
             background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');
-        }
-
-        .banner-slide:nth-child(4) {
-            background-image: url('https://www.ayurindus.com/wp-content/uploads/2018/11/ayurvedic-herbs1.jpg');
         }
 
         h1 {
@@ -115,7 +103,7 @@
 
         .banner-btn {
             padding: 15px 35px;
-            background-color: #221056;
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 50px;
@@ -300,7 +288,7 @@
         }
 
         /* treatment section css */
-      
+
 
         .container {
             max-width: 1200px;
@@ -493,7 +481,7 @@
         }
 
         /* treatment section  */
-     
+
 
         .container {
             max-width: 1200px;
@@ -806,52 +794,15 @@
 <body>
     <!-- Multiple Image Scrolling Banner -->
     <div class="banner-container">
-        <!-- Slide 1 -->
+        <!-- Only Slide -->
         <div class="banner-slide active">
             <div class="banner-content">
-                <h1 style="color: white;">Ancient Ayurvedic Healing</h1>
-                <p>Experience the transformative power of traditional Ayurveda treatments, customized to restore balance
-                    and promote holistic wellness.</p>
-                <button class="banner-btn">Discover Our Treatments</button>
-            </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 style="color: white;">Natural Herbal Remedies</h1>
-                <p>Our authentic herbal formulations are prepared with care to address your unique body constitution and
-                    health concerns.</p>
-                <button class="banner-btn">Explore Remedies</button>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 style="color: white;">Mind-Body Balance</h1>
-                <p>Achieve perfect harmony between mind, body, and spirit through our holistic Ayurvedic wellness
+                <h1 class="heder" style="color: white;">Mind-Body Balance</h1>
+                <p style="color: white;">Achieve perfect harmony between mind, body, and spirit through our holistic
+                    Ayurvedic wellness
                     programs.</p>
                 <button class="banner-btn">View Programs</button>
             </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="banner-slide">
-            <div class="banner-content">
-                <h1 style="color: white;">Personalized Care</h1>
-                <p>Our Ayurvedic experts design customized treatment plans based on your individual dosha composition
-                    and health needs.</p>
-                <button class="banner-btn">Book Consultation</button>
-            </div>
-        </div>
-
-        <!-- Navigation Dots -->
-        <div class="slide-indicators">
-            <span class="indicator active" onclick="setSlide(0)"></span>
-            <span class="indicator" onclick="setSlide(1)"></span>
-            <span class="indicator" onclick="setSlide(2)"></span>
-            <span class="indicator" onclick="setSlide(3)"></span>
         </div>
     </div>
 
@@ -886,7 +837,7 @@
 
 
         <div class="image-container">
-            <img src="https://www.keralatourism.org/images/hri/large/ilakkizhi_ayurveda_therapy_3_175.jpg"
+            <img src="{% static 'images\IMG-20250517-WA0004.jpg' %}"
                 alt="Ayurvedic oil treatment being performed on a patient's back">
         </div>
 
@@ -984,10 +935,12 @@
             </div>
             <div class="treatment-details">
                 <h2>Psoriasis</h2>
-                <p>Psoriasis is a long-term skin condition that causes red, scaly patches on the skin. It happens when
-                    the skin cells build up too quickly. These patches are often itchy, dry, and can appear on the
-                    scalp, elbows, knees, and back. Psoriasis is not contagious, but it may come and go over time. It
-                    can be managed with proper treatment, lifestyle changes, and skin care..</p>
+                <p>Psoriasis is a chronic, non-contagious autoimmune condition that accelerates the life cycle of skin
+                    cells, causing them to build up rapidly on the surface. This results in thick, red, inflamed patches
+                    of skin covered with silvery-white scales. The affected areas can be itchy, painful, and sometimes
+                    crack or bleed. Triggers include stress, poor digestion, imbalanced diet, environmental factors, and
+                    a weakened immune system. In Ayurveda, Psoriasis is referred to as 'Kitibha' and is linked to an
+                    imbalance of the Vata and Kapha doshas, along with impurities in the blood (rakta dushti).</p>
                 <a href="{% url 'advtreatment' %}#Psoriasis" style="text-decoration: none;">
                     <button
                         style="padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">
