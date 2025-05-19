@@ -502,6 +502,7 @@
             flex: 1;
             min-width: 300px;
             position: relative;
+           
         }
 
         .image-container img {
@@ -509,6 +510,7 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         .copyright {
@@ -837,8 +839,8 @@
 
 
         <div class="image-container">
-            <img src="{% static 'images\IMG-20250517-WA0006.jpg' %}"
-                alt="Ayurvedic oil treatment being performed on a patient's back">
+            <img src="{% static '\images\imgbanner.jpg' %}"
+                alt="Ayurvedic oil treatment being performed on a patient's back" style=" width: 100%; height: 700px;">
         </div>
 
     </div>
