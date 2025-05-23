@@ -118,7 +118,8 @@
             
             font-size: 25px;
             font-weight: 500;
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
+            font-weight: bold;
         }
 
         .logo-text h3 {
@@ -524,12 +525,20 @@
     <header class="fixed top-0 left-0 right-0 z-[9999]">
         <!-- Header Top Section -->
         <div class="flex justify-between items-center header-toporg px-5 py-3 bg-[#000]">
-            <div class="flex items-center gap-2 text-white">
-                <a href="mailto:shanthihospital2004@gmail.com" class="email flex items-center gap-2">
-                    <i class="fas fa-envelope p-3 rounded-full border border-[#f46b30]"></i>
-                    <span>shanthihospital2004@gmail.com</span>
-                </a>
-            </div>
+            <div class="flex items-center gap-4 text-white">
+    <!-- Email -->
+    <a href="mailto:shanthihospital2004@gmail.com" class="flex items-center gap-2">
+        <i class="fas fa-envelope p-3 rounded-full border border-[#f46b30]"></i>
+        <span>shanthihospital2004@gmail.com</span>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+919876543210" class="flex items-center gap-2">
+        <i class="fas fa-phone p-3 rounded-full border border-[#f46b30]"></i>
+        <span>+91 98765 43210</span>
+    </a>
+</div>
+
             <div class="social-icons">
                 <a href="https://www.facebook.com/profile.php?id=61575500786201"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://instagram.com/shanthi_ayurvedahospital
@@ -549,8 +558,8 @@
             <a href="/" class="logo">
                 <img src="{% static 'images/shanthi.png' %}" alt="Santhi Ayurvedic Logo">
                 <div class="hidden text-[#fff] font-bold ml-2 text-xl leading-tight md:block logo-text">
-                    <h2>SHANTHI</h2>
-                    <h3>Ayurveda</h3>
+                    <h2>Shanthi</h2>
+                    <h3 style="white-space: nowrap;">Ayurveda Hospital</h3>
                 </div>
             </a>
 
